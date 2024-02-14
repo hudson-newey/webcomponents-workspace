@@ -1,8 +1,9 @@
 import { Meta, StoryObj } from "@storybook/web-components";
 import { ListProps } from "../components/inlineList";
+import "../components/inlineList";
 
 const meta: Meta<ListProps> = {
-  title: "Lists",
+  title: "Inline List",
   tags: ["lists", "testing"],
   component: "my-inline-list",
   argTypes: {

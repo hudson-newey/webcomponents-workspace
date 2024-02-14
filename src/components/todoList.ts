@@ -37,13 +37,13 @@ export class TodoList extends LitElement {
     }
   `;
 
-  private emptyTemplate = html`<p class="empty-list">No items</p>`;
+  private emptyTemplate = html`<p>No items</p>`;
   private itemsTemplate = (items: Item[]) => html`
-    <ul class="todo-list">
+    <ul>
       ${items.map(
         (item) => html`
-          <li class="todo-item">
-            ${item}
+          <li>
+            <span>${item}</span>
             <button @click="${() => this.removeItem(item)}">x</button>
           </li>
         `,
