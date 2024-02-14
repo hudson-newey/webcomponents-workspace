@@ -10,10 +10,4 @@ We recommend using the `webcomponents.code-workspace` in VSCode & running `packa
 
 - Run the "storybook" launch option from the VSCode debugger (_recommend_)
 - Run the "storybook" script from the vscode npm scripts
-- Run `pnpm storybook` from a terminal window
-
-### Run tests
-
-- Run the "test-storybook" launch option from the VSCode debugger (_recommended_)
-- Run the "test-storybook" script from the VSCode npm scripts
-- Run `pnpm test-storybook` from a terminal window
+- Run `pnpm dev` from a terminal window
