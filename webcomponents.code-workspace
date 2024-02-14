@@ -28,8 +28,8 @@
     },
     "explorer.compactFolders": false,
     "cSpell.caseSensitive": true,
-    "cSpell.words": ["grathium", "grathium-industries"],
-    "cSpell.ignorePaths": ["**/.vscode/**", "**/node_modules/**", "**/dist/**"]
+    "cSpell.words": [],
+    "cSpell.ignorePaths": ["**/.vscode/**", "**/node_modules/**", "**/dist/**", "webcomponents.code-workspace"]
   },
   "extensions": {
     "recommendations": [
@@ -67,7 +67,8 @@
         "name": "Test",
         "command": "pnpm test-storybook",
         "request": "launch",
-        "type": "node-terminal"
+        "type": "node-terminal",
+        "preLaunchTask": "pnpm dlx playwright install"
       },
       {
         "name": "Lint",
@@ -86,6 +87,16 @@
         "command": "pnpm dev",
         "request": "launch",
         "type": "node-terminal"
+      }
+    ]
+  },
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "pnpm dlx playwright install",
+        "command": "pnpm dlx playwright install",
+        "type": "shell"
       }
     ]
   }
