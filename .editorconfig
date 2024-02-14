@@ -1,0 +1,12 @@
+[*]
+charset = utf-8
+end_of_line = lf
+indent_size = 4
+indent_style = space
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# disable trim trailing whitespace for markdown documents so that
+# you can manually insert a line break via the double space syntax
+[*.md,*.mdx]
+trim_trailing_whitespace = false

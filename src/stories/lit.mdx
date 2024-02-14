@@ -1,0 +1,9 @@
+# Lit Documentation
+
+## Common Gotchas
+
+- Events such as `@click="${myFunction}"` will be called whenever they are rendered.
+    To make it so that they are only invoked when the event is called, we need to do a
+    react like callback eg. `@click="${() => myFunction()}"`
+    - Alternatively you can do something like `@click="${myFunction}"` if it has the same
+    return type that the event attribute expects.
