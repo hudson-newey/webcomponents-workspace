@@ -1,16 +1,16 @@
 {
-	"root": true,
-	"overrides": [
-		{
-			"extends": [
-				"eslint:recommended",
-				"plugin:@typescript-eslint/recommended"
-			],
-			"files": ["*.ts"],
-			"parserOptions": {
-				"createDefaultProgram": true,
-				"project": ["tsconfig.json"]
-			}
-		}
-	]
+  "root": true,
+  "rules": {
+    "strict": "error"
+  },
+  "overrides": [
+    {
+      "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
+      "files": ["*.ts"],
+      "parserOptions": {
+        "createDefaultProgram": true,
+        "project": ["tsconfig.json"]
+      }
+    }
+  ]
 }

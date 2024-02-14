@@ -1,4 +1,4 @@
-import type { TestRunnerConfig } from '@storybook/test-runner';
+import type { TestRunnerConfig } from "@storybook/test-runner";
 
 const config: TestRunnerConfig = {
   // Hook that is executed before the test runner starts running tests
@@ -18,6 +18,10 @@ const config: TestRunnerConfig = {
    */
   async postVisit(page, context) {
     // Add your configuration here.
+  },
+
+  tags: {
+    exclude: ["no-test"],
   },
 };
 

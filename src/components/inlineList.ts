@@ -6,7 +6,7 @@ export interface ListProps {
   name: string;
 }
 
-@customElement("my-list")
+@customElement("my-inline-list")
 export class List extends LitElement {
   public constructor() {
     super();
@@ -14,7 +14,7 @@ export class List extends LitElement {
 
   @property()
   accessor name = "";
-  
+
   @property({ type: Array })
   accessor items: string[] = [];
 
@@ -35,9 +35,7 @@ export class List extends LitElement {
     return html`
       <h1>Hello, ${this.name}!</h1>
 
-      ${this.items.length > 0
-        ? this.itemsTemplate(this.items)
-        : this.emptyTemplate}
+      ${this.items.length > 0 ? this.itemsTemplate(this.items) : this.emptyTemplate}
     `;
   }
 }

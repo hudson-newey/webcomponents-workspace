@@ -1,4 +1,4 @@
-import { html, LitElement } from "lit";
+import { css, html, LitElement } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
 type Item = string;
@@ -18,6 +18,25 @@ export class TodoList extends LitElement {
   @property({ type: Array })
   accessor items: Item[] = [];
 
+  static styles = css`
+    h1 {
+      font-family: "Fira Sans", sans-serif;
+    }
+
+    input {
+      padding: 0.25rem;
+      border-radius: 0.25rem;
+      outline: none;
+    }
+
+    button {
+      padding: 0.25rem;
+      border-radius: 0.25rem;
+      outline: none;
+      cursor: pointer;
+    }
+  `;
+
   private emptyTemplate = html`<p>No items</p>`;
   private itemsTemplate = (items: Item[]) => html`
     <ul>
@@ -27,14 +46,14 @@ export class TodoList extends LitElement {
             ${item}
             <button @click="${() => this.removeItem(item)}">x</button>
           </li>
-        `
+        `,
       )}
     </ul>
   `;
 
   private removeItem = (item: Item) => {
     this.items = [...this.items.filter((x) => x !== item)];
-  }
+  };
 
   private addItem = () => {
     const inputElement = this.shadowRoot?.querySelector("input");
@@ -50,15 +69,13 @@ export class TodoList extends LitElement {
     if (event.key === "Enter") {
       this.addItem();
     }
-  }
+  };
 
   public render() {
     return html`
       <h1>My Todo List</h1>
 
-      ${this.items.length > 0
-        ? this.itemsTemplate(this.items)
-        : this.emptyTemplate}
+      ${this.items.length > 0 ? this.itemsTemplate(this.items) : this.emptyTemplate}
 
       <input type="text" @keydown=${this.handleKeyPress} />
       <button class="add-button" @click="${() => this.addItem()}">Add</button>

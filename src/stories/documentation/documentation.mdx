@@ -1,13 +1,13 @@
 # What I had to do to get this working:
 
 - The render field in the stories has to refer to a storybook component.
-    We therefore return the Lit component from storybook html string.
+  We therefore return the Lit component from storybook html string.
 - I had to enable `expiermentalDecorators` and disable `useDefineForClassFields`
-    in the `tsconfig.json` file.
+  in the `tsconfig.json` file.
 - I had to create a `stories.ts` file for each storybook component.
-    - In this file, I had to export a `Meta` object as `default`.
-    - For each `story.ts` I outlined stories which modified the props
-        object passed to the storybook props attributes.
+  - In this file, I had to export a `Meta` object as `default`.
+  - For each `story.ts` I outlined stories which modified the props
+    object passed to the storybook props attributes.
 
 ## Tech stack
 
@@ -18,6 +18,8 @@
 - Jest for testing
 - Playwright as a browser test runner
 
-## Common Gotchas
+## Running Tests
 
-- When you add a new storybook addon you have to restart the storybook server
+We use two testing frameworks: Jest and Playwright.
+
+We use jest for interaction and unit testing, and playwright for browser testing.

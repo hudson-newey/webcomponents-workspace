@@ -1,12 +1,12 @@
 import { Meta, StoryObj } from "@storybook/web-components";
-import { TodoListProps } from "../../components/todo-list";
-import { userEvent, within } from "@storybook/testing-library";
-import { MyTodoList } from "./TodoList";
+import { TodoListProps } from "../components/todoList";
+import { userEvent } from "@storybook/testing-library";
+import "../components/todoList";
 
 const meta: Meta<TodoListProps> = {
   title: "Todo List",
   tags: ["lists", "testing", "todo"],
-  render: MyTodoList,
+  component: "my-todo-list",
   argTypes: {
     items: {
       control: "array",
@@ -33,16 +33,10 @@ export const TodoListAddItems: StoryObj<TodoListProps> = {
     items: [],
   },
   play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
+    const component = canvasElement.querySelector("my-todo-list") as HTMLElement;
 
-    const component = canvas.getByTestId("component");
-
-    const inputElement = component.shadowRoot?.querySelector<HTMLInputElement>(
-      "input"
-    ) as HTMLInputElement;
-    const addButton = component.shadowRoot?.querySelector<HTMLButtonElement>(
-      ".add-button"
-    ) as HTMLButtonElement;
+    const inputElement = component.shadowRoot?.querySelector<HTMLInputElement>("input") as HTMLInputElement;
+    const addButton = component.shadowRoot?.querySelector<HTMLButtonElement>(".add-button") as HTMLButtonElement;
 
     // add an item using the input and "Add" button
     await userEvent.type(inputElement, "New item");
@@ -58,42 +52,29 @@ export const TodoListRemoveItem: StoryObj<TodoListProps> = {
     items: ["First item", "Second item"],
   },
   play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
+    const component = canvasElement.querySelector("my-todo-list") as HTMLElement;
 
-    const component = canvas.getByTestId("component");
-
-    const removeButton = component.shadowRoot?.querySelectorAll<HTMLButtonElement>(
-      "button"
-    )[0] as HTMLButtonElement;
+    const removeButton = component.shadowRoot?.querySelectorAll<HTMLButtonElement>("button")[0] as HTMLButtonElement;
 
     await userEvent.click(removeButton);
   },
 };
-
 
 export const TodoListAddAndRemoveItem: StoryObj<TodoListProps> = {
   args: {
     items: ["First item", "Second item"],
   },
   play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
+    const component = canvasElement.querySelector("my-todo-list") as HTMLElement;
 
-    const component = canvas.getByTestId("component");
-
-    const inputElement = component.shadowRoot?.querySelector<HTMLInputElement>(
-      "input"
-    ) as HTMLInputElement;
-    const addButton = component.shadowRoot?.querySelector<HTMLButtonElement>(
-      ".add-button"
-    ) as HTMLButtonElement;
+    const inputElement = component.shadowRoot?.querySelector<HTMLInputElement>("input") as HTMLInputElement;
+    const addButton = component.shadowRoot?.querySelector<HTMLButtonElement>(".add-button") as HTMLButtonElement;
 
     await userEvent.type(inputElement, "New item");
 
     await userEvent.click(addButton);
 
-    const removeButton = component.shadowRoot?.querySelectorAll<HTMLButtonElement>(
-      "button"
-    )[0] as HTMLButtonElement;
+    const removeButton = component.shadowRoot?.querySelectorAll<HTMLButtonElement>("button")[0] as HTMLButtonElement;
 
     await userEvent.click(removeButton);
   },
