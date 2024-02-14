@@ -3,7 +3,6 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "main": "src/components/todoList.ts",
   "scripts": {
     "dev": "storybook dev -p 6006",
     "storybook": "storybook dev -p 6006",
