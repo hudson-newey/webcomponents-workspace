@@ -17,8 +17,9 @@ jobs:
       - name: Build Storybook
         run: pnpm build:storybook
       - name: Start Storybook
-        run: pnpm dlx http-server dist/storybook --port 6006 --silent && \
-          pnpm dlx wait-on tcp:6006
+        run: pnpm dlx http-server dist/storybook --port 6006 --silent &
+      - name: Wait for Storybook to start
+        run: pnpm dlx wait-on tcp:6006
       - name: Run interaction tests
         run: pnpm test:interaction"
       - name: Run e2e tests
