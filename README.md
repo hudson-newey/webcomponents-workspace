@@ -36,7 +36,7 @@ Full page example:
     <title>Web Component CDN Example</title>
     <script
       type="script/javascript"
-      src="https://main--wc-workspace-demojtgf4zsprh.netlify.app65cc5ec90cc2ec73f1d3d561--wc-workspace-demojtgf4zsprh.netlify.app/components/todoList.js"
+      src="https://65cc5ec90cc2ec73f1d3d561--wc-workspace-demojtgf4zsprh.netlify.app/components/todoList.js"
     ></script>
   </head>
 
