@@ -11,18 +11,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: "Checkout source code"
-        uses: "actions/checkout@v2"
-        with:
-          ref: ${{ github.ref }}
-      - name: "Bump package.json version"
-        id: version
+      - name: "Automated Version Bump"
         uses: "phips28/gh-action-bump-version@master"
-        with:
-          tag-prefix: "v"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: "Create Release"
-        env:
-          NEW_TAG: ${{ steps.version.outputs.newTag }}
-        run: echo "new tag $NEW_TAG"
+        with:
+          default: prerelease
+          tag-prefix: "v"
