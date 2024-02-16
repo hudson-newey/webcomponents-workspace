@@ -1,5 +1,5 @@
 {
-  "name": "baw-web-components",
+  "name": "web-component-workspace",
   "private": true,
   "version": "0.1.0",
   "type": "module",
@@ -11,8 +11,8 @@
     "build:storybook": "storybook build -s public -o dist/storybook",
     "test": "test-storybook && playwright test",
     "test:interaction": "test-storybook",
-    "test:e2e": "playwright test",
-    "test:e2e-debug": "playwright test --ui",
+    "test:unit": "playwright test",
+    "test:unit-debug": "playwright test --ui",
     "lint": "eslint ."
   },
   "devDependencies": {

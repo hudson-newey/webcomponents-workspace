@@ -1,4 +1,4 @@
-import { css, html, LitElement } from "lit";
+import { LitElement, html, css } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
 export interface TodoListProps {
@@ -14,7 +14,7 @@ export class TodoList extends LitElement {
   }
 
   @property({ type: Array })
-  accessor items: string[] = [];
+  items!: string[];
 
   static styles = css`
     h1 {

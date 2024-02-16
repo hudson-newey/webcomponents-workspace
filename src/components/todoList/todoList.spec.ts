@@ -1,13 +1,12 @@
-import { test, expect } from "@sand4rt/experimental-ct-web";
-import { describe } from "node:test";
-import { TodoList } from "./todoList";
+import { expect, test } from "@sand4rt/experimental-ct-web";
+import { TodoList } from "../todoList/todoList";
 
-describe("todoList", () => {
-  test("should have the correct title", async ({ mount }) => {
-    const component = await mount(TodoList, {
-      props: {
-        items: [],
-      },
-    });
+test("should create", async ({ mount }) => {
+  const component = await mount(TodoList, {
+    props: {
+      items: [],
+    },
   });
+
+  expect(component).toBeTruthy();
 });
