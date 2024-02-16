@@ -4,7 +4,7 @@ on:
   - pull_request
 
 jobs:
-  Setup:
+  Interaction-Tests:
     timeout-minutes: 5
     runs-on: ubuntu-latest
     steps:
@@ -15,12 +15,6 @@ jobs:
           version: 8
           run_install: |
             -recursive: true
-
-  Interaction-Tests:
-    timeout-minutes: 5
-    runs-on: ubuntu-latest
-    needs: Setup
-    steps:
       - name: Build Storybook
         run: pnpm build:storybook
       - name: Start Storybook
@@ -31,7 +25,13 @@ jobs:
   Unit-Tests:
     timeout-minutes: 5
     runs-on: ubuntu-latest
-    needs: Setup
     steps:
+      - name: Checkout and Setup
+        uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 8
+          run_install: |
+            -recursive: true
       - name: Run unit tests
         run: pnpm test:unit
