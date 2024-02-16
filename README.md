@@ -1,5 +1,7 @@
 # Web Components Workspace
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/4cc663fa-d0c0-486b-b108-559ba35fb3ff/deploy-status)](https://app.netlify.com/sites/wc-workspace-demojtgf4zsprh/deploys)
+
 ## Workspace Configuration
 
 We recommend using the `webcomponents.code-workspace` in VSCode & running `package.json` scripts through the "NPM Scripts" view.
@@ -19,10 +21,7 @@ You can import web components through the CDN
 Script tag snippet:
 
 ```html
-<script
-  type="script/javascript"
-  src="https://65cc5ec90cc2ec73f1d3d561--wc-workspace-demojtgf4zsprh.netlify.app/components/todoList.js"
-></script>
+<script type="text/javascript" src="https://wc-workspace-demojtgf4zsprh.netlify.app/todoList.js"></script>
 ```
 
 Full page example:
@@ -34,10 +33,7 @@ Full page example:
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Web Component CDN Example</title>
-    <script
-      type="script/javascript"
-      src="https://65cc5ec90cc2ec73f1d3d561--wc-workspace-demojtgf4zsprh.netlify.app/components/todoList.js"
-    ></script>
+    <script type="text/javascript" src="https://wc-workspace-demojtgf4zsprh.netlify.app/todoList.js"></script>
   </head>
 
   <body>

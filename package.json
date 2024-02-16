@@ -5,14 +5,13 @@
   "type": "module",
   "scripts": {
     "dev": "storybook dev -p 6006",
-    "storybook": "storybook dev -p 6006",
-    "build": "tsc && storybook build -s public -o dist/storybook",
+    "build": "tsc && vite build && storybook build -s public -o dist/storybook",
     "build:components": "tsc && vite build",
     "build:storybook": "storybook build -s public -o dist/storybook",
     "test": "test-storybook && playwright test",
+    "test:unit": "playwright test components/",
     "test:interaction": "test-storybook",
-    "test:unit": "playwright test",
-    "test:unit-debug": "playwright test --ui",
+    "test:e2e": "playwright test tests/",
     "lint": "eslint ."
   },
   "devDependencies": {

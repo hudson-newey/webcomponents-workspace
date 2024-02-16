@@ -1,1 +1,1 @@
-import "@/components/todoList/todoList.ts";
+import "../src/components/todoList/todoList.ts";
