@@ -5,19 +5,9 @@ on:
   - pull_request
 
 jobs:
-  enforce-commit-message-format:
+  build:
+    name: Validate Commit
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Validate commit messages
-        run: |
-          COMMIT_REGEX='^(build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test){1}(\([\w\-\.]+\))?(!)?: ([\w ])+([\s\S]*)'
-          git log --format=%B --not $(git merge-base origin/main HEAD)..HEAD | grep -Ev "$COMMIT_REGEX"
-        continue-on-error: true
-
-      - name: Fail if invalid commit message found
-        run: exit $(git log --format=%B --not $(git merge-base origin/main HEAD)..HEAD | grep -Ev "$COMMIT_REGEX" | wc -l)
-        shell: bash
+      - uses: actions/checkout@v3
+      - uses: webiny/action-conventional-commits@v1.3.0

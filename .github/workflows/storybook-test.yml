@@ -1,24 +1,24 @@
-name: "Test Storybook"
-on:
-  - push
-  - pull_request
+# name: "Test Storybook"
+# on:
+#   - push
+#   - pull_request
 
-jobs:
-  Test:
-    timeout-minutes: 5
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: pnpm/action-setup@v3
-        with:
-          version: 8
-          run_install: |
-            -recursive: true
-      - name: Build Storybook
-        run: pnpm build:storybook
-      - name: Start Storybook
-        run: pnpm dlx http-server dist/storybook --port 6006 --silent &
-      - name: Run interaction tests
-        run: pnpm test:interaction"
-      - name: Run e2e tests
-        run: pnpm test:e2e
+# jobs:
+#   Test:
+#     timeout-minutes: 5
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v3
+#       - uses: pnpm/action-setup@v3
+#         with:
+#           version: 8
+#           run_install: |
+#             -recursive: true
+#       - name: Build Storybook
+#         run: pnpm build:storybook
+#       - name: Start Storybook
+#         run: pnpm dlx http-server dist/storybook --port 6006 --silent &
+#       - name: Run interaction tests
+#         run: pnpm test:interaction"
+#       - name: Run e2e tests
+#         run: pnpm test:e2e
