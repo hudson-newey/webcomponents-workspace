@@ -1,13 +1,13 @@
-name: "Publish"
-on: push
+# name: "Publish"
+# on: push
 
-jobs:
-  checkout:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: pnpm/action-setup@v3
-        with:
-          version: 8
-          run_install: |
-            - recursive: true
+# jobs:
+#   checkout:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v3
+#       - uses: pnpm/action-setup@v3
+#         with:
+#           version: 8
+#           run_install: |
+#             - recursive: true
