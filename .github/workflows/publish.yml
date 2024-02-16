@@ -9,6 +9,8 @@ jobs:
   Create-GitHub-Release:
     name: "Bump Version on master"
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - name: "Checkout source code"
@@ -20,5 +22,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          default: minor
+          default: patch
           tag-prefix: "v"

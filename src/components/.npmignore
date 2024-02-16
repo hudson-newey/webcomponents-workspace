@@ -1,0 +1,8 @@
+# to minimise bundle size, we don't publish tests to npm
+**/*.spec.ts
+
+# keep the types folder when publishing to npm
+!@types/
+
+pnpm-lock.yaml
+package-lock.json

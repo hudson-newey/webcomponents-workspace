@@ -8,6 +8,23 @@ We recommend using the `webcomponents.code-workspace` in VSCode & running `packa
 
 ## How to use
 
+### Architecture
+
+This GitHub template is a mono-repo (like) architecture with two distinct parts: The web-component workspace/development environment
+and the components that you want to publish.
+
+#### web-component workspace mono-repo
+
+Handles publishing, documentation, and testing
+
+#### component publishing repo
+
+Found under `src/components`, you can develop all your components in isolation here.
+This folder can be published as its own NPM package, and be exported without any dependencies linking it back to the
+web-component-workspace mono-repo.
+
+You can also add sub-modules to this directory to include them in the web-component workspace (this template).
+
 ### Development Environment
 
 - Run the "storybook" launch option from the VSCode debugger (_recommend_)
