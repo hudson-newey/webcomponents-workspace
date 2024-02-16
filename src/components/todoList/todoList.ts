@@ -1,10 +1,8 @@
 import { css, html, LitElement } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
-type Item = string;
-
 export interface TodoListProps {
-  items: Item[];
+  items: string[];
 }
 
 @customElement("my-todo-list")
@@ -16,7 +14,7 @@ export class TodoList extends LitElement {
   }
 
   @property({ type: Array })
-  accessor items: Item[] = [];
+  accessor items: string[] = [];
 
   static styles = css`
     h1 {
@@ -38,7 +36,7 @@ export class TodoList extends LitElement {
   `;
 
   private emptyTemplate = html`<p>No items</p>`;
-  private itemsTemplate = (items: Item[]) => html`
+  private itemsTemplate = (items: string[]) => html`
     <ul>
       ${items.map(
         (item) => html`
@@ -51,7 +49,7 @@ export class TodoList extends LitElement {
     </ul>
   `;
 
-  private removeItem = (item: Item) => {
+  private removeItem = (item: string) => {
     this.items = [...this.items.filter((x) => x !== item)];
   };
 

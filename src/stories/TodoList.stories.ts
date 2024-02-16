@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from "@storybook/web-components";
-import { TodoListProps } from "../components/todoList";
+import { TodoListProps } from "../components/todoList/todoList";
 import { userEvent } from "@storybook/testing-library";
-import "../components/todoList";
+import "../components/todoList/todoList";
 
 const meta: Meta<TodoListProps> = {
   title: "Todo List",
