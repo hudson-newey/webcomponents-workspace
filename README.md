@@ -21,7 +21,7 @@ You can import web components through the CDN
 Script tag snippet:
 
 ```html
-<script type="text/javascript" src="https://wc-workspace-demojtgf4zsprh.netlify.app/todoList.js"></script>
+<script type="script/javascript" src="https://wc-workspace-demojtgf4zsprh.netlify.app/todoList.js"></script>
 ```
 
 Full page example:
@@ -33,7 +33,7 @@ Full page example:
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Web Component CDN Example</title>
-    <script type="text/javascript" src="https://wc-workspace-demojtgf4zsprh.netlify.app/todoList.js"></script>
+    <script type="script/javascript" src="https://wc-workspace-demojtgf4zsprh.netlify.app/todoList.js"></script>
   </head>
 
   <body>

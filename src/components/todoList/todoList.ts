@@ -14,7 +14,7 @@ export class TodoList extends LitElement {
   }
 
   @property({ type: Array })
-  items!: string[];
+  accessor items: string[];
 
   static styles = css`
     h1 {
