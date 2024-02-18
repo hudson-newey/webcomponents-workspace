@@ -1,6 +1,5 @@
 {
   "name": "@hudson-newey/web-components",
-  "version": "1.1.1",
   "description": "My web components",
   "types": "@types/",
   "scripts": {

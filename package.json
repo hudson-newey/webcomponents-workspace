@@ -21,6 +21,7 @@
     "workspace"
   ],
   "workspaces": [
+    "src/components",
     "@hudson-newey/web-components"
   ],
   "devDependencies": {
