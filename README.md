@@ -60,3 +60,24 @@ Full page example:
 ```
 
 ### NPM
+
+You can add the example components used in this repository by using the following command
+
+```sh
+$ npm i @hudson-newey/web-components
+>
+```
+
+You can then import them into a file using
+
+```js
+import { TodoList } from "node-modules/@hudson-newey/web-components/todoList";
+```
+
+#### Using automatically generated TypeScript types
+
+You can use the typescript types through the following code
+
+```ts
+import { TodoList, TodoListProps } from "node-modules/@hudson-newey/webcomponents/@types/todoList";
+```
