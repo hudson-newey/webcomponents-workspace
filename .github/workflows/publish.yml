@@ -25,6 +25,7 @@ jobs:
           PACKAGEJSON_DIR: "./src/components/"
         with:
           default: patch
+          tag-prefix:  "v"
 
       # Setup .npmrc file to publish to npm
       - uses: actions/setup-node@v3

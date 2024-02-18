@@ -20,10 +20,6 @@
     "components",
     "workspace"
   ],
-  "workspaces": [
-    "src/components",
-    "@hudson-newey/web-components"
-  ],
   "devDependencies": {
     "@jest/types": "^29.6.3",
     "@playwright/test": "1.41.0",
