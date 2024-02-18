@@ -13,7 +13,7 @@ We recommend using the `webcomponents.code-workspace` in VSCode & running `packa
 This GitHub template is a mono-repo (like) architecture with two distinct parts: The web-component workspace/development environment
 and the components that you want to publish.
 
-#### web-component workspace mono-repo
+#### web-component workspace
 
 Handles publishing, documentation, and testing
 

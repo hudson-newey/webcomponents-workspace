@@ -8,6 +8,7 @@
     "build": "tsc && vite build && storybook build -s public -o dist/storybook",
     "build:components": "tsc && vite build",
     "build:storybook": "storybook build -s public -o dist/storybook",
+    "publish:components": "npm run publish:components --prefix src/components",
     "test": "test-storybook && playwright test",
     "test:unit": "playwright test components/",
     "test:interaction": "test-storybook",
@@ -18,6 +19,9 @@
     "web components",
     "components",
     "workspace"
+  ],
+  "workspaces": [
+    "@hudson-newey/web-components"
   ],
   "devDependencies": {
     "@jest/types": "^29.6.3",

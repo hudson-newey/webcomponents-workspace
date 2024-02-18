@@ -7,14 +7,8 @@ export interface TodoListProps {
 
 @customElement("my-todo-list")
 export class TodoList extends LitElement {
-  public constructor() {
-    super();
-
-    this.items ??= [];
-  }
-
   @property({ type: Array })
-  accessor items: string[];
+  accessor items: string[] = [];
 
   static styles = css`
     h1 {

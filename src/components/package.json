@@ -1,10 +1,11 @@
 {
   "name": "@hudson-newey/web-components",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "My web components",
   "types": "@types/",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "publish:components": "tsc && pnpm version patch && npm publish --access public"
   },
   "keywords": [
     "web components"
