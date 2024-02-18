@@ -6,7 +6,7 @@ on:
       - "main"
 
 jobs:
-  Create-GitHub-Release:
+  Release:
     name: "Bump Version on master"
     runs-on: ubuntu-latest
     permissions:
@@ -21,15 +21,11 @@ jobs:
         uses: "phips28/gh-action-bump-version@master"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PACKAGEJSON_DIR: "src/components"
         with:
           default: patch
           tag-prefix: "v"
 
-  Create-NPM-Release:
-    name: "Publish to NPM"
-    runs-on: ubuntu-latest
-
-    steps:
       - name: "Checkout"
         uses: "actions/checkout@v4"
         with:
