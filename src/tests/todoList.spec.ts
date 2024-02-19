@@ -1,6 +1,9 @@
 import { test, expect } from "@sand4rt/experimental-ct-web";
 import { describe } from "node:test";
 
+// End-to-end test example
+// This is not a good example of an end-to-end test as it does not involve the interaction of multiple components
+// however, I want to show the format that these tests might take
 describe("my-todo-list", () => {
   describe("empty", () => {
     test("should have correct title", async ({ page }) => {

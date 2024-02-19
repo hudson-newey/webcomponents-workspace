@@ -1,7 +1,7 @@
 // this tsconfig is used to automatically generate types for the components
 // when publishing to NPM
 {
-  "exclude": ["**/*.spec.*"],
+  "exclude": ["**/*.spec.*", "@types/**/*"],
   "include": ["**/*"],
   "compilerOptions": {
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
