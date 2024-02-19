@@ -2,8 +2,8 @@
   "exclude": ["**/*.spec.*", "@types/**/*"],
   "include": ["**/*.ts"],
   "compilerOptions": {
-    "lib": ["ES2022", "DOM", "DOM.Iterable"],
-    "target": "ES2022",
+    "lib": ["ES2017", "DOM", "DOM.Iterable"],
+    "target": "ES2017",
     "newLine": "lf",
     "module": "ESNext",
     "outDir": "js",

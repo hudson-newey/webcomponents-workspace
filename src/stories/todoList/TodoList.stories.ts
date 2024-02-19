@@ -1,12 +1,15 @@
 import { Meta, StoryObj } from "@storybook/web-components";
-import { TodoListProps } from "../components/todoList/todoList";
+import { TodoListProps } from "../../components/todoList/todoList";
 import { userEvent } from "@storybook/testing-library";
-import "../components/todoList/todoList";
+import "../../components/todoList/todoList";
+import { html } from "lit";
 
 const meta: Meta<TodoListProps> = {
   title: "Todo List",
-  tags: ["lists", "testing", "todo"],
-  component: "my-todo-list",
+  tags: ["lists", "testing", "todo, autodocs"],
+  render: () => html`<my-todo-list>
+    <p>This is a test</p>
+  </my-todo-list>`,
   argTypes: {
     items: {
       control: "array",

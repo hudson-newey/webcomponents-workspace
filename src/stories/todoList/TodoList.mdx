@@ -1,4 +1,4 @@
-import { Canvas, Meta } from "@storybook/blocks";
+import { Canvas, Meta, Story } from "@storybook/blocks";
 import * as Stories from "./TodoList.stories.ts";
 
 <Meta of={Stories} />
@@ -24,8 +24,10 @@ To view the code of the component, click on the "Show code" button in the top ri
 
 ### A todo list with no items
 
-<Canvas of={Stories.EmptyTodoList} />
+<Story of={Stories.EmptyTodoList} />
 
 ### A todo list with starting items
 
-<Canvas of={Stories.TodoListWithItems} />
+<Canvas of={Stories.TodoListWithItems}>
+  <Story of={Stories.TodoListWithItems} />
+</Canvas>

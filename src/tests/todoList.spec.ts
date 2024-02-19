@@ -1,4 +1,4 @@
-import { test, expect } from "@sand4rt/experimental-ct-web";
+import { test, expect } from "@playwright/test";
 import { describe } from "node:test";
 
 // End-to-end test example

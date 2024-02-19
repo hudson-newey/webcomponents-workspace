@@ -11,7 +11,7 @@ Using this workspace, the [`src/components`](/src/components/) directory has bee
 - Storybook documentation: [wc-workspace-demojtgf4zsprh.netlify.app/storybook](https://wc-workspace-demojtgf4zsprh.netlify.app/storybook)
 - NPM: [npmjs.com/package/@hudson-newey/web-components](https://www.npmjs.com/package/@hudson-newey/web-components)
 - GitHub Releases: [github.com/hudson-newey/webcomponents-workspace/tags](https://github.com/hudson-newey/webcomponents-workspace/tags)
-- CDN: [wc-workspace-demojtgf4zsprh.netlify.app/todoList.js](https://wc-workspace-demojtgf4zsprh.netlify.app/todoList.js)
+- CDN: [unpkg.com/@hudson-newey/web-components@1.3.14/js/todoList/todoList.js](https://www.unpkg.com/@hudson-newey/web-components@1.3.14/js/todoList/todoList.js?module)
 
 ## Workspace Configuration
 
@@ -49,7 +49,10 @@ You can import web components through the CDN
 Script tag snippet:
 
 ```html
-<script type="module" src="https://wc-workspace-demojtgf4zsprh.netlify.app/todoList.js"></script>
+<script
+  type="module"
+  src="https://www.unpkg.com/@hudson-newey/web-components@1.3.14/js/todoList/todoList.js?module"
+></script>
 ```
 
 Full page example:
@@ -61,7 +64,10 @@ Full page example:
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Web Component CDN Example</title>
-    <script type="module" src="https://wc-workspace-demojtgf4zsprh.netlify.app/todoList.js"></script>
+    <script
+      type="module"
+      src="https://www.unpkg.com/@hudson-newey/web-components@1.3.14/js/todoList/todoList.js?module"
+    ></script>
   </head>
 
   <body>
