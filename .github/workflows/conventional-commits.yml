@@ -1,7 +1,6 @@
 name: Enforce Conventional Commits
 
 on:
-  - push
   - pull_request
 
 jobs:

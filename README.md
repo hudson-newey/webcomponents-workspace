@@ -93,6 +93,14 @@ You can use the typescript types through the following code
 import { TodoList, TodoListProps } from "node-modules/@hudson-newey/webcomponents/@types/todoList";
 ```
 
+### Using TypeScript (instead of JavaScript)
+
+```js
+import { TodoList } from "node-modules/@hudson-newey/web-components/js/todoList";
+```
+
+_Note: The `js/` directory in the from file path_
+
 ### GitHub Releases
 
 You can manually import the example components in this repository using the [GitHub releases page](https://github.com/hudson-newey/webcomponents-workspace/tags)

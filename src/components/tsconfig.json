@@ -1,25 +1,21 @@
-// this tsconfig is used to automatically generate types for the components
-// when publishing to NPM
 {
   "exclude": ["**/*.spec.*", "@types/**/*"],
-  "include": ["**/*"],
+  "include": ["**/*.ts"],
   "compilerOptions": {
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
     "target": "ES2022",
     "newLine": "lf",
     "module": "ESNext",
-    "outDir": "@types",
+    "outDir": "js",
+    "declarationDir": "@types",
 
-    /* Bundler mode */
     "moduleResolution": "Bundler",
-    "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
 
     "experimentalDecorators": true,
     "useDefineForClassFields": false,
 
-    "emitDeclarationOnly": true,
     "declaration": true
   }
 }

@@ -1,5 +1,6 @@
-# we only want to publish @types to npm and releases
+# we only want to publish @types and js/ to npm and releases
 @types/
+js/
 
 # Logs
 logs
