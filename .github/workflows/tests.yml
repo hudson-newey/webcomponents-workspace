@@ -18,8 +18,8 @@ jobs:
           version: 8
           run_install: |
             -recursive: true
-      - name: Build Storybook
-        run: pnpm build:storybook
+      - name: Install Playwright Browsers
+        run: pnpm dlx playwright install --with-deps
       - name: Start Storybook
         run: pnpm dlx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
           "pnpm dev" \
