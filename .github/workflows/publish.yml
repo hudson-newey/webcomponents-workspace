@@ -18,7 +18,8 @@ jobs:
         id: release
         with:
           token: ${{ secrets.MY_RELEASE_PLEASE_TOKEN }}
-          release-type: node
+          config-file: release-please-config.json
+          manifest-file: .release-please-manifest.json
       
       # publish to NPM for each release created
       - name: "Checkout"
@@ -29,6 +30,7 @@ jobs:
       
       # Setup .npmrc file to publish to npm
       - uses: actions/setup-node@v3
+        if: ${{ steps.release.outputs.release_created }}
         with:
           node-version: "20.x"
           registry-url: "https://registry.npmjs.org"
@@ -37,6 +39,7 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: "Install pnpm"
+        if: ${{ steps.release.outputs.release_created }}
         uses: "pnpm/action-setup@v3"
         with:
           version: 8
@@ -44,4 +47,5 @@ jobs:
             - recursive: true
 
       - name: "Publish to NPM"
+        if: ${{ steps.release.outputs.release_created }}
         run: pnpm publish:components

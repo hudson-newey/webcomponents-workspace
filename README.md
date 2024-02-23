@@ -2,7 +2,7 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/4cc663fa-d0c0-486b-b108-559ba35fb3ff/deploy-status)](https://app.netlify.com/sites/wc-workspace-demojtgf4zsprh/deploys)
 
-Write once, publish anywhere"
+"Write once, publish anywhere"
 
 ## Online deployment of example components
 
