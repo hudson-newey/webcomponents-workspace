@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.2](https://github.com/hudson-newey/webcomponents-workspace/compare/v1.4.1...v1.4.2) (2024-02-23)
+
+
+### Bug Fixes
+
+* kodiak ([27e2e78](https://github.com/hudson-newey/webcomponents-workspace/commit/27e2e78dbc9db91cae7f3676ff103d3b0b73411d))
+
 ## [1.4.1](https://github.com/hudson-newey/webcomponents-workspace/compare/v1.4.0...v1.4.1) (2024-02-23)
 
 
