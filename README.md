@@ -8,9 +8,9 @@
 
 Using this workspace, the [`src/components`](/src/components/) directory has been automatically deployed to the following locations
 
-- Storybook documentation: [wc-workspace-demojtgf4zsprh.netlify.app/storybook](https://wc-workspace-demojtgf4zsprh.netlify.app/storybook)
+- Storybook documentation: [wc-workspace-demojtgf4zsprh.netlify.app](https://wc-workspace-demojtgf4zsprh.netlify.app)
 - NPM: [npmjs.com/package/@hudson-newey/web-components](https://www.npmjs.com/package/@hudson-newey/web-components)
-- GitHub Releases: [github.com/hudson-newey/webcomponents-workspace/tags](https://github.com/hudson-newey/webcomponents-workspace/tags)
+- GitHub Releases: [github.com/hudson-newey/webcomponents-workspace/releases](https://github.com/hudson-newey/webcomponents-workspace/releases)
 - CDN: [unpkg.com/@hudson-newey/web-components@1.3.14/js/todoList/todoList.js](https://www.unpkg.com/@hudson-newey/web-components@1.3.14/js/todoList/todoList.js?module)
 
 ## Workspace Configuration
@@ -109,6 +109,6 @@ _Note: The `js/` directory in the from file path_
 
 ### GitHub Releases
 
-You can manually import the example components in this repository using the [GitHub releases page](https://github.com/hudson-newey/webcomponents-workspace/tags)
+You can manually import the example components in this repository using the [GitHub releases page](https://github.com/hudson-newey/webcomponents-workspace/releases)
 
 Pre-compiled source files and raw TypeScript files can be found on this page
