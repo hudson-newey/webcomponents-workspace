@@ -2,27 +2,13 @@ import { Meta, StoryObj } from "@storybook/web-components";
 import { TodoListProps } from "../../components/todoList/todoList";
 import { userEvent } from "@storybook/testing-library";
 import "../../components/todoList/todoList";
-import { html } from "lit";
 
 const meta: Meta<TodoListProps> = {
   title: "Todo List",
-  tags: ["lists", "testing", "todo, autodocs"],
-  render: () => html`<my-todo-list>
-    <p>This is a test</p>
-  </my-todo-list>`,
-  argTypes: {
-    items: {
-      control: "array",
-      description: "The list of items to display",
-    },
-  },
+  component: "my-todo-list",
 };
 
-export const EmptyTodoList: StoryObj<TodoListProps> = {
-  args: {
-    items: [],
-  },
-};
+export const EmptyTodoList: StoryObj<TodoListProps> = { };
 
 export const TodoListWithItems: StoryObj<TodoListProps> = {
   args: {
@@ -32,9 +18,6 @@ export const TodoListWithItems: StoryObj<TodoListProps> = {
 
 // interaction tests
 export const TodoListAddItems: StoryObj<TodoListProps> = {
-  args: {
-    items: [],
-  },
   play: async ({ canvasElement }) => {
     const component = canvasElement.querySelector("my-todo-list") as HTMLElement;
 

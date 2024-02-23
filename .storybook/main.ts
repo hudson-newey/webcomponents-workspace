@@ -7,12 +7,11 @@ const config: StorybookConfig = {
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
   ],
-  framework: {
-    name: "@storybook/web-components-vite",
-    options: {},
-  },
+  framework: "@storybook/web-components-vite",
   docs: {
-    autodocs: "tag",
+    autodocs: true,
+    defaultName: "Documentation",
   },
 };
+
 export default config;

@@ -4,18 +4,7 @@ import "../../components/inlineList/inlineList";
 
 const meta: Meta<ListProps> = {
   title: "Inline List",
-  tags: ["lists", "testing"],
   component: "my-inline-list",
-  argTypes: {
-    name: {
-      control: "text",
-      description: "The name to display",
-    },
-    items: {
-      control: "array",
-      description: "The list of items to display",
-    },
-  },
 };
 
 export const Empty: StoryObj<ListProps> = {

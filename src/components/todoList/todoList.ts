@@ -5,10 +5,17 @@ export interface TodoListProps {
   items: string[];
 }
 
+/**
+ * An example element.
+ *
+ * @slot - This elements default slot
+ * @slot titleSlot - A slot for the title
+ * @csspart .add-button - The button to add an item to the list
+ */
 @customElement("my-todo-list")
 export class TodoList extends LitElement {
   @property({ type: Array })
-  accessor items: string[] = [];
+  items: string[] = [];
 
   static styles = css`
     h1 {
@@ -65,12 +72,17 @@ export class TodoList extends LitElement {
 
   public render() {
     return html`
-      <h1 id="title">My Todo List</h1>
+      <h1 id="title">
+        My Todo List
+        <slot name="titleSlot"></slot>
+      </h1>
 
       ${this.items.length > 0 ? this.itemsTemplate(this.items) : this.emptyTemplate}
 
       <input type="text" @keydown=${this.handleKeyPress} />
       <button class="add-button" @click="${() => this.addItem()}">Add</button>
+
+      <slot></slot>
     `;
   }
 }
