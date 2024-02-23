@@ -8,6 +8,7 @@ export default defineConfig({
       lit: true,
     }),
   ],
+  server: {},
   build: {
     lib: {
       name: "todoList",

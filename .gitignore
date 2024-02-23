@@ -4,6 +4,7 @@
 
 # playwright
 test-results/
+**/*custom-elements.json
 
 # Logs
 logs

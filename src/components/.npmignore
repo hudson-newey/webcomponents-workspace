@@ -4,5 +4,6 @@
 # keep the types folder when publishing to npm
 !@types/
 
+# don't publish package locks
 pnpm-lock.yaml
 package-lock.json
