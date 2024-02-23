@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.0](https://github.com/hudson-newey/webcomponents-workspace/compare/v1.4.2...v1.5.0) (2024-02-23)
+
+
+### Features
+
+* automatic documentation generation ([2f8011e](https://github.com/hudson-newey/webcomponents-workspace/commit/2f8011e88644d72d9ca152f5555c05331acd35f2))
+
 ## [1.4.2](https://github.com/hudson-newey/webcomponents-workspace/compare/v1.4.1...v1.4.2) (2024-02-23)
 
 
