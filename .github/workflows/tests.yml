@@ -1,8 +1,10 @@
 name: "Run Tests"
 
+# for each release and pull request we want to run the tests
 on:
-  - push
-  - pull_request
+  pull_request:
+    branches:
+      - main
 
 jobs:
   # I've deviated from the storybook docs example because of
