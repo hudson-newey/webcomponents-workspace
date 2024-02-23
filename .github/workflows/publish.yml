@@ -23,8 +23,8 @@ jobs:
       
       # publish to NPM for each release created
       - name: "Checkout"
-        uses: "actions/checkout@v4"
         if: ${{ steps.release.outputs.release_created }}
+        uses: "actions/checkout@v4"
         with:
           ref: ${{ github.ref }}
       

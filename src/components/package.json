@@ -5,7 +5,7 @@
   "types": "@types/",
   "scripts": {
     "build": "tsc",
-    "publish:components": "tsc && npm publish --access public"
+    "publish:components": "pnpm build && npm publish --access public"
   },
   "keywords": [
     "web components"
