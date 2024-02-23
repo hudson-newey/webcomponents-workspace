@@ -8,10 +8,10 @@ Write once, publish anywhere"
 
 Using this workspace, the [`src/components`](/src/components/) directory has been automatically deployed to the following locations
 
-- Storybook documentation: [wc-workspace-demojtgf4zsprh.netlify.app/storybook](https://wc-workspace-demojtgf4zsprh.netlify.app/storybook)
+- Documentation: [wc-workspace-demojtgf4zsprh.netlify.app/docs](https://wc-workspace-demojtgf4zsprh.netlify.app/docs)
 - NPM: [npmjs.com/package/@hudson-newey/web-components](https://www.npmjs.com/package/@hudson-newey/web-components)
 - GitHub Releases: [github.com/hudson-newey/webcomponents-workspace/tags](https://github.com/hudson-newey/webcomponents-workspace/tags)
-- CDN: [unpkg.com/@hudson-newey/web-components@1.3.14/js/todoList/todoList.js](https://www.unpkg.com/@hudson-newey/web-components@1.3.14/js/todoList/todoList.js?module)
+- CDN: [unpkg.com/@hudson-newey/web-components@1.3.14/js/todoList/todoList.js?module](https://www.unpkg.com/@hudson-newey/web-components@1.3.14/js/todoList/todoList.js?module)
 
 ## Workspace Configuration
 

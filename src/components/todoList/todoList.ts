@@ -71,6 +71,8 @@ export class TodoList extends LitElement {
 
       <input type="text" @keydown=${this.handleKeyPress} />
       <button class="add-button" @click="${() => this.addItem()}">Add</button>
+
+      <slot></slot>
     `;
   }
 }

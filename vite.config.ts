@@ -1,6 +1,8 @@
 import { defineConfig } from "vite";
 
 export default defineConfig({
+  server: {
+  },
   build: {
     lib: {
       name: "todoList",
