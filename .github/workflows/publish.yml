@@ -49,3 +49,9 @@ jobs:
       - name: "Publish to NPM"
         if: ${{ steps.release.outputs.release_created }}
         run: pnpm publish:components
+
+      - name: Upload Built Components as Release Artifact
+        if: ${{ steps.release.outputs.release_created }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: zip -r ./dist/components.zip src/components/ -x "**/node_modules/*" && gh release upload ${{ steps.release.outputs.tag_name }} ./dist/components.zip

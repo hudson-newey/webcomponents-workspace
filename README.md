@@ -11,7 +11,7 @@ Using this workspace, the [`src/components`](/src/components/) directory has bee
 - Storybook documentation: [wc-workspace-demojtgf4zsprh.netlify.app](https://wc-workspace-demojtgf4zsprh.netlify.app)
 - NPM: [npmjs.com/package/@hudson-newey/web-components](https://www.npmjs.com/package/@hudson-newey/web-components)
 - GitHub Releases: [github.com/hudson-newey/webcomponents-workspace/releases](https://github.com/hudson-newey/webcomponents-workspace/releases)
-- CDN: [unpkg.com/@hudson-newey/web-components@1.3.14/js/todoList/todoList.js](https://www.unpkg.com/@hudson-newey/web-components@1.3.14/js/todoList/todoList.js?module)
+- CDN: [unpkg.com/@hudson-newey/web-components/js/todoList/todoList.js](https://www.unpkg.com/@hudson-newey/web-components/js/todoList/todoList.js?module)
 
 ## Workspace Configuration
 
@@ -51,7 +51,7 @@ Script tag snippet:
 ```html
 <script
   type="module"
-  src="https://www.unpkg.com/@hudson-newey/web-components@1.3.14/js/todoList/todoList.js?module"
+  src="https://www.unpkg.com/@hudson-newey/web-components/js/todoList/todoList.js?module"
 ></script>
 ```
 
@@ -66,7 +66,7 @@ Full page example:
     <title>Web Component CDN Example</title>
     <script
       type="module"
-      src="https://www.unpkg.com/@hudson-newey/web-components@1.3.14/js/todoList/todoList.js?module"
+      src="https://www.unpkg.com/@hudson-newey/web-components/js/todoList/todoList.js?module"
     ></script>
   </head>
 
