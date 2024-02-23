@@ -6,8 +6,22 @@ on:
       - "main"
 
 jobs:
-  Release:
-    name: "Bump Version on master"
+  GitHub-Release:
+    name: "Release GitHub Version"
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - uses: google-github-actions/release-please-action@v4
+        with:
+          token: ${{ secrets.MY_RELEASE_PLEASE_TOKEN }}
+          release-type: node
+
+  # implicitly deploys to unpkg as our cdn
+  NPM-Release:
+    name: "Release GitHub Version"
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -17,15 +31,6 @@ jobs:
         uses: "actions/checkout@v3"
         with:
           ref: ${{ github.ref }}
-
-      - name: "Automated Version Bump"
-        uses: "phips28/gh-action-bump-version@master"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PACKAGEJSON_DIR: "./src/components/"
-        with:
-          default: patch
-          tag-prefix:  "v"
 
       # Setup .npmrc file to publish to npm
       - uses: actions/setup-node@v3
