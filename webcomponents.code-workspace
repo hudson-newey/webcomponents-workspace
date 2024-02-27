@@ -28,7 +28,7 @@
     },
     "explorer.compactFolders": false,
     "cSpell.caseSensitive": true,
-    "cSpell.words": [],
+    "cSpell.words": ["ecoacoustics"],
     "cSpell.ignorePaths": ["**/.vscode/**", "**/node_modules/**", "**/dist/**", "webcomponents.code-workspace"]
   },
   "extensions": {
@@ -52,7 +52,9 @@
       "visualstudioexptteam.vscodeintellicode",
       "visualstudioexptteam.intellicode-api-usage-examples",
       "ms-playwright.playwright",
-      "ms-vscode.vscode-typescript-next"
+      "ms-vscode.vscode-typescript-next",
+      "bierner.lit-html",
+      "ecmel.vscode-html-css"
     ]
   },
   "launch": {

@@ -3,6 +3,7 @@ import { customElement, property } from "lit/decorators.js";
 
 export interface TodoListProps {
   items: string[];
+  title?: string;
 }
 
 /**
@@ -16,6 +17,9 @@ export interface TodoListProps {
 export class TodoList extends LitElement {
   @property({ type: Array })
   items: string[] = [];
+
+  @property({ type: String })
+  title: string = "My Todo List";
 
   static styles = css`
     h1 {
@@ -73,7 +77,7 @@ export class TodoList extends LitElement {
   public render() {
     return html`
       <h1 id="title">
-        My Todo List
+        ${this.title}
         <slot name="titleSlot"></slot>
       </h1>
 

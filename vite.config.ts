@@ -4,7 +4,7 @@ import VitePluginCustomElementsManifest from "vite-plugin-cem";
 export default defineConfig({
   plugins: [
     VitePluginCustomElementsManifest({
-      files: ["./src/components/todoList/todoList.ts"],
+      files: ["./src/components/**/*.ts"],
       lit: true,
     }),
   ],

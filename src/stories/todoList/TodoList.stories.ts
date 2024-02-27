@@ -1,18 +1,35 @@
 import { Meta, StoryObj } from "@storybook/web-components";
 import { TodoListProps } from "../../components/todoList/todoList";
 import { userEvent } from "@storybook/testing-library";
+import { html } from "lit";
 import "../../components/todoList/todoList";
 
 const meta: Meta<TodoListProps> = {
   title: "Todo List",
   component: "my-todo-list",
+  render: ({ items, title }) => {
+    if (title) {
+      if (items) {
+        return html`<my-todo-list .items=${items} title=${title}></my-todo-list>`;
+      } else {
+        return html`<my-todo-list title=${title}></my-todo-list>`;
+      }
+    }
+
+    if (items) {
+      return html`<my-todo-list .items=${items}></my-todo-list>`;
+    }
+
+    return html`<my-todo-list></my-todo-list>`;
+  },
 };
 
-export const EmptyTodoList: StoryObj<TodoListProps> = { };
+export default meta;
 
 export const TodoListWithItems: StoryObj<TodoListProps> = {
   args: {
-    items: ["First item", "Second item"],
+    title: "My Shopping List",
+    items: ["Eggs", "Flour"],
   },
 };
 
@@ -65,5 +82,3 @@ export const TodoListAddAndRemoveItem: StoryObj<TodoListProps> = {
     await userEvent.click(removeButton);
   },
 };
-
-export default meta;
