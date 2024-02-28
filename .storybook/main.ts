@@ -7,20 +7,6 @@ const config: StorybookConfig = {
     name: "@storybook/web-components-vite",
     options: {},
   },
-  core: {
-    builder: "storybook-builder-vite",
-  },
-  async viteFinal(config, { configType }) {
-    // customize the Vite config here
-    config.optimizeDeps.include = [
-      ...(config.optimizeDeps?.include ?? []),
-      '@storybook/web-components',
-    ]
-    config.optimizeDeps.exclude = [...(config.optimizeDeps?.exclude ?? []), 'lit', 'lit-html']
-
-    // return the customized config
-    return config
-  },
   typescript: {
     skipBabel: true,
     check: false,
