@@ -8,6 +8,7 @@
     "module": "ESNext",
     "outDir": "js",
     "declarationDir": "@types",
+    "types": ["vite/client"],
 
     "moduleResolution": "Bundler",
     "resolveJsonModule": true,

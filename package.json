@@ -22,6 +22,7 @@
   "devDependencies": {
     "@jest/types": "^29.6.3",
     "@playwright/test": "1.41.0",
+    "@rollup/plugin-image": "^3.0.3",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-terser": "^0.4.4",
     "@sand4rt/experimental-ct-web": "^1.41.0",
@@ -46,5 +47,9 @@
     "typescript-eslint": "^7.0.1",
     "vite": "^5.0.8",
     "vite-plugin-cem": "^0.6.0"
+  },
+  "dependencies": {
+    "ionicons": "^7.2.2",
+    "lucide-static": "^0.341.0"
   }
 }

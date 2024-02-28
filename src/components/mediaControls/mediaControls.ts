@@ -1,10 +1,33 @@
-import { LitElement, html, css } from "lit";
+import { LitElement, html, css, nothing } from "lit";
 import { customElement, property } from "lit/decorators.js";
+import lucidPlayIcon from "lucide-static/icons/play.svg";
+import lucidPauseIcon from "lucide-static/icons/pause.svg";
 
-export interface MediaControlsProps {}
+export interface MediaControlsProps {
+  playing: boolean;
+  currentTime: number;
+  src: string;
+  audioDuration: number;
+  allowsUserInput: boolean;
+  for: string;
+}
 
+/**
+ * A simple media player with play/pause and seek functionality that can be used with the open ecoacoustics spectrograms and components.
+ *
+ * @csspart --primary-color - The primary color of the component
+ * @csspart --rounding - The rounding of the component
+ */
 @customElement("oe-media-controls")
 export class MediaControls extends LitElement {
+  public constructor() {
+    super();
+
+    if (this.audioDuration) {
+      this.changeTime(this.audioDuration);
+    }
+  }
+
   @property({ type: Boolean })
   playing: boolean = false;
 
@@ -16,6 +39,12 @@ export class MediaControls extends LitElement {
 
   @property({ type: Number })
   audioDuration = 0;
+
+  @property({ type: Boolean })
+  allowsUserInput = false;
+
+  @property({ type: String })
+  for = "";
 
   static styles = [
     css`
@@ -40,14 +69,29 @@ export class MediaControls extends LitElement {
       }
 
       .action-button {
-        color: white;
-        background-color: var(--primary-color);
-        border-color: var(--primary-color);
+        display: flex;
+        color: white !important;
+        fill: white !important;
+        stroke: white !important;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
+        border: solid thin var(--primary-color);
         padding: 0.1rem 0.5rem;
         border-radius: var(--rounding);
         cursor: pointer;
         font-size: 1rem;
-        max-width: 2rem;
+        min-width: 2.8rem;
+        min-height: 2.3rem;
+      }
+
+      .audio-input {
+        margin-top: 0.5rem;
+      }
+
+      .seek-container {
+        display: flex;
+        align-items: center;
       }
 
       .seek-input {
@@ -63,17 +107,20 @@ export class MediaControls extends LitElement {
           appearance: none;
           margin-top: -12px; /* Centers thumb on the track */
           background-color: var(--primary-color);
-          height: 1.2rem;
-          width: 0.3rem;
+          height: 1.5rem;
+          width: 0.35rem;
         }
       }
 
       time {
+        display: flex;
+        align-items: center;
         padding: 0.1rem 0.5rem;
         border: solid thin var(--primary-color);
         border-radius: var(--rounding);
         margin-left: 0.25rem;
         margin-right: 0.25rem;
+        font-size: 1.1rem;
       }
     `,
   ];
@@ -104,20 +151,46 @@ export class MediaControls extends LitElement {
     this.currentTime += 0.2;
   }
 
+  private changeTime(value) {
+    this.stopAudio();
+
+    this.currentTime = value;
+    this.shadowRoot.querySelector("audio").currentTime = value;
+  }
+
   private formatTime(time: number) {
     return new Date(time * 1000).toISOString().substr(14, 5);
   }
 
+  private isDisabled() {
+    return this.src || this.for;
+  }
+
+  private playIcon = html`<embed src="${lucidPlayIcon}"></object>`;
+  private pauseIcon = html`<embed src="${lucidPauseIcon}"></object>`;
+
+  private fileUploadTemplate() {
+    if (this.allowsUserInput) {
+      return html`
+        <div class="audio-input">
+          <input type="file" />
+        </div>
+      `;
+    }
+
+    return nothing;
+  }
+
   public render() {
     return html`
-      <div class="container ${this.src ? "" : "disabled"}">
+      <div class="container ${this.isDisabled() ? "" : "disabled"}">
         <button class="action-button" @click="${() => this.toggleAudio()}">
-          ${this.playing ? html`&#9616;&nbsp;&#9612;` : html``}
+          ${this.playing ? this.pauseIcon : this.playIcon}
         </button>
 
-        <time>${this.formatTime(this.currentTime)}</time>
+        <time data-testid="elapsed-duration">${this.formatTime(this.currentTime)}</time>
 
-        <span>
+        <span class="seek-container">
           <input
             type="range"
             class="seek-input"
@@ -125,11 +198,11 @@ export class MediaControls extends LitElement {
             min="0"
             step="0.1"
             max="${this.audioDuration}"
-            @change="${(event) => (this.currentTime = Number(event.target.value))}"
+            @change="${(event) => this.changeTime(Number(event.target.value))}"
           />
         </span>
 
-        <time>${this.formatTime(this.audioDuration)}</time>
+        <time data-testid="total-duration">${this.formatTime(this.audioDuration)}</time>
       </div>
 
       <audio
@@ -141,6 +214,8 @@ export class MediaControls extends LitElement {
       >
         <source src="${this.src}" type="audio/flac" />
       </audio>
+
+      ${!this.src ? this.fileUploadTemplate() : nothing}
     `;
   }
 }
