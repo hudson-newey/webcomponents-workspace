@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.0](https://github.com/hudson-newey/webcomponents-workspace/compare/v1.5.0...v1.6.0) (2024-02-29)
+
+
+### Features
+
+* Pushing ([4097ce9](https://github.com/hudson-newey/webcomponents-workspace/commit/4097ce99a4e2f28747712005608d849a0a08ef0d))
+
 ## [1.5.0](https://github.com/hudson-newey/webcomponents-workspace/compare/v1.4.2...v1.5.0) (2024-02-23)
 
 
