@@ -155,7 +155,7 @@ export class MediaControls extends LitElement {
     this.stopAudio();
 
     this.currentTime = value;
-    this.shadowRoot.querySelector("audio").currentTime = value;
+    this.shadowRoot.querySelector("audio").currentTime = value * 500;
   }
 
   private formatTime(time: number) {
