@@ -47,9 +47,5 @@
     "typescript-eslint": "^7.0.1",
     "vite": "^5.0.8",
     "vite-plugin-cem": "^0.6.0"
-  },
-  "dependencies": {
-    "ionicons": "^7.2.2",
-    "lucide-static": "^0.341.0"
   }
 }

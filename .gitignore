@@ -1,3 +1,7 @@
+# because some of these components load audio, it is sometimes helpful to have media files co-located in the repo
+# therefore, we want to ignore all flac files when using git so the download time doesn't get too large
+**/*.flac
+
 # playwright
 test-results/
 

@@ -1,4 +1,4 @@
-import { LitElement, html, css, nothing } from "lit";
+import { LitElement, html, css } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import lucidPlayIcon from "lucide-static/icons/play.svg";
 import lucidPauseIcon from "lucide-static/icons/pause.svg";
@@ -8,7 +8,7 @@ export interface MediaControlsProps {
   currentTime: number;
   src: string;
   audioDuration: number;
-  allowsUserInput: boolean;
+  disabled: boolean;
   for: string;
 }
 
@@ -32,7 +32,7 @@ export class MediaControls extends LitElement {
   playing: boolean = false;
 
   @property({ type: Number })
-  currentTime: number = 0;
+  currentTime = 0;
 
   @property({ type: String })
   src = "";
@@ -41,7 +41,7 @@ export class MediaControls extends LitElement {
   audioDuration = 0;
 
   @property({ type: Boolean })
-  allowsUserInput = false;
+  disabled = false;
 
   @property({ type: String })
   for = "";
@@ -83,33 +83,6 @@ export class MediaControls extends LitElement {
         font-size: 1rem;
         min-width: 2.8rem;
         min-height: 2.3rem;
-      }
-
-      .audio-input {
-        margin-top: 0.5rem;
-      }
-
-      .seek-container {
-        display: flex;
-        align-items: center;
-      }
-
-      .seek-input {
-        -webkit-appearance: none;
-        appearance: none;
-        background: #d3d3d3;
-        cursor: pointer;
-        width: 15rem;
-        height: 0.25rem;
-
-        &::-webkit-slider-thumb,
-        &::-moz-range-thumb {
-          appearance: none;
-          margin-top: -12px; /* Centers thumb on the track */
-          background-color: var(--primary-color);
-          height: 1.5rem;
-          width: 0.35rem;
-        }
       }
 
       time {
@@ -163,23 +136,12 @@ export class MediaControls extends LitElement {
   }
 
   private isDisabled() {
-    return this.src || this.for;
+    const hasSource = this.src || this.for;
+    return hasSource && !this.disabled;
   }
 
   private playIcon = html`<embed src="${lucidPlayIcon}"></object>`;
   private pauseIcon = html`<embed src="${lucidPauseIcon}"></object>`;
-
-  private fileUploadTemplate() {
-    if (this.allowsUserInput) {
-      return html`
-        <div class="audio-input">
-          <input type="file" />
-        </div>
-      `;
-    }
-
-    return nothing;
-  }
 
   public render() {
     return html`
@@ -188,21 +150,9 @@ export class MediaControls extends LitElement {
           ${this.playing ? this.pauseIcon : this.playIcon}
         </button>
 
-        <time data-testid="elapsed-duration">${this.formatTime(this.currentTime)}</time>
-
-        <span class="seek-container">
-          <input
-            type="range"
-            class="seek-input"
-            value="${this.currentTime}"
-            min="0"
-            step="0.1"
-            max="${this.audioDuration}"
-            @change="${(event) => this.changeTime(Number(event.target.value))}"
-          />
-        </span>
-
-        <time data-testid="total-duration">${this.formatTime(this.audioDuration)}</time>
+        <time data-testid="elapsed-duration"
+          >${this.formatTime(this.currentTime)} / ${this.formatTime(this.audioDuration)}</time
+        >
       </div>
 
       <audio
@@ -214,8 +164,6 @@ export class MediaControls extends LitElement {
       >
         <source src="${this.src}" type="audio/flac" />
       </audio>
-
-      ${!this.src ? this.fileUploadTemplate() : nothing}
     `;
   }
 }

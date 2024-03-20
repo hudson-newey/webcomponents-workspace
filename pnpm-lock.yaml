@@ -7,13 +7,6 @@ settings:
 importers:
 
   .:
-    dependencies:
-      ionicons:
-        specifier: ^7.2.2
-        version: 7.2.2
-      lucide-static:
-        specifier: ^0.341.0
-        version: 0.341.0
     devDependencies:
       '@jest/types':
         specifier: ^29.6.3
@@ -103,8 +96,8 @@ importers:
         specifier: ^3.1.2
         version: 3.1.2
       lucide-static:
-        specifier: ^0.341.0
-        version: 0.341.0
+        specifier: ^0.359.0
+        version: 0.359.0
     devDependencies:
       typescript:
         specifier: ^5.2.2
@@ -3084,12 +3077,6 @@ packages:
     dependencies:
       '@sinonjs/commons': 3.0.1
     dev: true
-
-  /@stencil/core@4.12.4:
-    resolution: {integrity: sha512-KrwoXu9J1loWSvQQReilGPkt6/dCH/x5eTBDecCBPclz7vxUM13Iw9almBIffEpurk/kaMAglH0G7sAF/A2y1A==}
-    engines: {node: '>=16.0.0', npm: '>=7.10.0'}
-    hasBin: true
-    dev: false
 
   /@storybook/addon-actions@7.6.16:
     resolution: {integrity: sha512-wCpZljLXnu08TZzp+qL5AXousfUBzY6TgHVwn4yoZkMhPg3WLxZTceKYnc+XAxoMmdTrDjwanEF7v/uQ9eu64Q==}
@@ -6813,12 +6800,6 @@ packages:
       loose-envify: 1.4.0
     dev: true
 
-  /ionicons@7.2.2:
-    resolution: {integrity: sha512-I3iYIfc9Q9FRifWyFSwTAvbEABWlWY32i0sAVDDPGYnaIZVugkLCZFbEcrphW6ixVPg8tt1oLwalo/JJwbEqnA==}
-    dependencies:
-      '@stencil/core': 4.12.4
-    dev: false
-
   /ip@2.0.0:
     resolution: {integrity: sha512-WKa+XuLG1A1R0UWhl2+1XQSi+fZWMsYKffMZTTYsiZaUD8k2yDAj5atimTUD2TZkyCkNEeYE5NhFZmupOGtjYQ==}
     dev: true
@@ -7970,8 +7951,8 @@ packages:
       yallist: 4.0.0
     dev: true
 
-  /lucide-static@0.341.0:
-    resolution: {integrity: sha512-myFO6oNoTpaX0cxz9iNl3+4m+pyb4J9Y67F3WKLTx847dTJxzPPQ7/ZENHp9UTPupebQX9cvCi+D2DAdqJJKGQ==}
+  /lucide-static@0.359.0:
+    resolution: {integrity: sha512-wPlCjgDBqbXVSMsOQnGfsfyUnGm39+XeSj5637CO8ZX6tXs3PcgW1qHWwWa8UJmUcHo1ciYMS5ovTIzYBXYL/g==}
     dev: false
 
   /lz-string@1.5.0:

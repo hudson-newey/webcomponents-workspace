@@ -1,33 +1,35 @@
 import { Meta, StoryObj } from "@storybook/web-components";
 import { MediaControlsProps } from "../../components/mediaControls/mediaControls";
 import "../../components/mediaControls/mediaControls";
-import { html } from "lit";
 
 const meta: Meta<MediaControlsProps> = {
   title: "Media Controls",
   component: "oe-media-controls",
-  //render: (args) => html`<oe-media-controls ${args}></oe-media-controls>`,
+  // render: (args) => html`<oe-media-controls></oe-media-controls>`,
 };
 
 export default meta;
 
+const src = "http://localhost:5500/media_example.flac";
+
 export const MediaControlsWithData: StoryObj<MediaControlsProps> = {
   args: {
-    src: "https://api.search.acousticobservatory.org/api/v1/a2o/audio_recordings/download/flac/966100?start_offset=2210&end_offset=2215",
+    src,
   },
 };
 
 export const MediaControlsWithStartingPoint: StoryObj<MediaControlsProps> = {
   args: {
-    src: "https://api.search.acousticobservatory.org/api/v1/a2o/audio_recordings/download/flac/966100?start_offset=2210&end_offset=2215",
     currentTime: 2,
+    src,
   },
 };
 
 export const EmptyMediaControlsWithoutData: StoryObj<MediaControlsProps> = {};
 
-export const EmptyMediaControlsThatAllowsUserInput: StoryObj<MediaControlsProps> = {
+export const DisabledMediaControls: StoryObj<MediaControlsProps> = {
   args: {
-    allowsUserInput: true,
+    disabled: true,
+    src,
   },
 };
