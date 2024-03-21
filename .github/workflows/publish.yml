@@ -19,7 +19,6 @@ jobs:
         with:
           token: ${{ secrets.MY_RELEASE_PLEASE_TOKEN }}
           config-file: release-please-config.json
-          skip-github-pull-request: true
 
       # publish to NPM for each release created
       - name: "Checkout"
