@@ -1,13 +1,13 @@
-name: Release
+name: "Release"
 
 on:
   push:
     branches:
-      - main
+      - "main"
 
 jobs:
   Create-Release:
-    name: Create Release
+    name: "Create Release"
     runs-on: ubuntu-latest
     permissions:
       contents: write
