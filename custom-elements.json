@@ -1,0 +1,170 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "src/components/inlineList/inlineList.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "List",
+          "members": [
+            {
+              "kind": "field",
+              "name": "accessor",
+              "attribute": "accessor"
+            },
+            {
+              "kind": "field",
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\""
+            },
+            {
+              "kind": "field",
+              "name": "items",
+              "type": {
+                "text": "string[]"
+              },
+              "default": "[]"
+            },
+            {
+              "kind": "field",
+              "name": "emptyTemplate",
+              "privacy": "private",
+              "default": "html`<p>No items</p>`"
+            },
+            {
+              "kind": "field",
+              "name": "itemsTemplate",
+              "privacy": "private"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "accessor",
+              "fieldName": "accessor",
+              "attribute": "accessor"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "my-inline-list",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "List",
+          "declaration": {
+            "name": "List",
+            "module": "src/components/inlineList/inlineList.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "my-inline-list",
+          "declaration": {
+            "name": "List",
+            "module": "src/components/inlineList/inlineList.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/todoList/todoList.spec.ts",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/todoList/todoList.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "TodoList",
+          "members": [
+            {
+              "kind": "field",
+              "name": "accessor",
+              "attribute": "accessor"
+            },
+            {
+              "kind": "field",
+              "name": "items",
+              "type": {
+                "text": "string[]"
+              },
+              "default": "[]"
+            },
+            {
+              "kind": "field",
+              "name": "emptyTemplate",
+              "privacy": "private",
+              "default": "html`<p>No items</p>`"
+            },
+            {
+              "kind": "field",
+              "name": "itemsTemplate",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "removeItem",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "addItem",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "handleKeyPress",
+              "privacy": "private"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "accessor",
+              "fieldName": "accessor"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "my-todo-list",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "TodoList",
+          "declaration": {
+            "name": "TodoList",
+            "module": "src/components/todoList/todoList.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "my-todo-list",
+          "declaration": {
+            "name": "TodoList",
+            "module": "src/components/todoList/todoList.ts"
+          }
+        }
+      ]
+    }
+  ]
+}
