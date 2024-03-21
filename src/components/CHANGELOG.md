@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.1](https://github.com/hudson-newey/webcomponents-workspace/compare/web-components-v1.5.0...web-components-v1.5.1) (2024-03-21)
+
+
+### Bug Fixes
+
+* tests in CI ([a30a897](https://github.com/hudson-newey/webcomponents-workspace/commit/a30a8973754171000e1b08b51236ff4f70044f58))
+
 ## [1.5.0](https://github.com/hudson-newey/webcomponents-workspace/compare/web-components-v1.4.0...web-components-v1.5.0) (2024-03-21)
 
 
