@@ -31,7 +31,7 @@
     "@storybook/addon-links": "^7.6.12",
     "@storybook/blocks": "^7.6.12",
     "@storybook/jest": "^0.2.3",
-    "@storybook/test-runner": "^0.16.0",
+    "@storybook/test-runner": "^0.17.0",
     "@storybook/testing-library": "^0.2.2",
     "@storybook/web-components": "^7.6.12",
     "@storybook/web-components-vite": "^7.6.14",
