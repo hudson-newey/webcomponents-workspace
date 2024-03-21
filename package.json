@@ -42,7 +42,7 @@
     "react-dom": "^18.2.0",
     "rollup-plugin-minify-html-literals": "^1.2.6",
     "rollup-plugin-summary": "^2.0.0",
-    "storybook": "^7.6.12",
+    "storybook": "^8.0.2",
     "typescript": "^5.2.2",
     "typescript-eslint": "^7.0.1",
     "vite": "^5.0.8",
