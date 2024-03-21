@@ -19,7 +19,7 @@ export const mediaControlsStyles = css`
     opacity: 0.6;
   }
 
-  .action-button {
+  #action-button {
     display: flex;
     color: white !important;
     fill: white !important;

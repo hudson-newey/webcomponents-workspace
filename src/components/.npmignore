@@ -1,8 +1,8 @@
-# to minimise bundle size, we don't publish tests to npm
-**/*.spec.ts
-
-# keep the types folder when publishing to npm
+# we only want to publish the @types/ and js/ directories to npm
+# we also want to include markdown documents so that the npm repo has some documentation
 !@types/
+!js/
+!*.md
 
-pnpm-lock.yaml
-package-lock.json
+# don't publish anything else
+**/*

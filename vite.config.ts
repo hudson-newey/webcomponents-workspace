@@ -8,11 +8,12 @@ export default defineConfig({
       lit: true,
     }),
   ],
+  server: {},
   build: {
     lib: {
-      name: "todoList",
-      fileName: "todoList",
-      entry: "src/components/todoList/todoList.ts",
+      name: "web-components",
+      fileName: "web-components",
+      entry: "src/components/index.ts",
       formats: ["es"],
     },
   },
