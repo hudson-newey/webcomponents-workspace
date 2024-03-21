@@ -1,35 +1,27 @@
-name: "Publish"
+name: Publish
 
+# TODO: fix this hacky solution to not get this action to fire automatically
 on:
   push:
     branches:
-      - "main"
+      - sdjshfjksdhgjkhgjklhdfjghjkshdfgjklfhdjkghsfjkldkgh
 
 jobs:
-  GitHub-Release:
-    name: "Release GitHub Version"
+  Publish-Assets:
+    name: Publish Assets to NPM and GitHub
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      pull-requests: write
 
     steps:
-      - uses: google-github-actions/release-please-action@v4
-        id: release
-        with:
-          token: ${{ secrets.MY_RELEASE_PLEASE_TOKEN }}
-          config-file: release-please-config.json
-
       # publish to NPM for each release created
-      - name: "Checkout"
-        if: ${{ steps.release.outputs.release_created }}
-        uses: "actions/checkout@v4"
+      - name: Checkout
+        uses: actions/checkout@v3
         with:
           ref: ${{ github.ref }}
 
       # Setup .npmrc file to publish to npm
       - uses: actions/setup-node@v3
-        if: ${{ steps.release.outputs.release_created }}
         with:
           node-version: "20.x"
           registry-url: "https://registry.npmjs.org"
@@ -37,20 +29,43 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: "Install pnpm"
-        if: ${{ steps.release.outputs.release_created }}
-        uses: "pnpm/action-setup@v3"
+      - name: Install pnpm
+        uses: pnpm/action-setup@v3
         with:
           version: 8
           run_install: |
             - recursive: true
 
-      - name: "Publish to NPM"
-        if: ${{ steps.release.outputs.release_created }}
+      - name: Publish to NPM
         run: pnpm publish:components
 
-      - name: Upload Built Components as Release Artifact
-        if: ${{ steps.release.outputs.release_created }}
+      - name: Publish to GitHub Releases
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: zip -r ./dist/components.zip src/components/ -x "**/node_modules/*" && gh release upload ${{ steps.release.outputs.tag_name }} ./dist/components.zip
+        run: |
+          zip -r ./dist/components.zip src/components/js/ -x "**/node_modules/*" \
+          && gh release upload $tag_name ./dist/components.zip \
+          && gh release upload $tag_name ./src/components/js/index.js
+
+  Publish-Documentation:
+    name: Publish Documentation
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Install pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 8
+          run_install: |
+            - recursive: true
+
+      - name: Build docs
+        run: pnpm build:docs
+
+      - name: Publish docs
+        uses: netlify/actions/cli@master
+        with:
+          args: deploy --dir=dist/docs
+        env:
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}

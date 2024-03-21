@@ -4,19 +4,15 @@
   "version": "1.6.0",
   "type": "module",
   "scripts": {
-    "start": "vite --config vite.config.ts ./dist/docs/",
-    "build": "rimraf build/ && pnpm build:components && pnpm build:docs",
-    "build:components": "cem analyze --litelement --globs \"src/**/*.ts\" && vite build",
-    "build:docs": "eleventy --config=.eleventy.cjs",
+    "dev": "vite",
+    "documentation": "vite ./dist/docs/",
+    "build:docs": "rimraf build/ && pnpm build:components && vite build && eleventy --config=.eleventy.cjs",
+    "build:components": "cem analyze --litelement --globs \"src/components/**/*.ts\"",
     "publish:components": "pnpm -C src/components run publish:components",
     "test:unit": "playwright test components/",
+    "test:e2e": "playwright test tests/",
     "lint": "eslint ."
   },
-  "keywords": [
-    "web components",
-    "components",
-    "workspace"
-  ],
   "customElements": "custom-elements.json",
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
