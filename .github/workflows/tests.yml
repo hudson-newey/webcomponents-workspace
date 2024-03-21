@@ -39,6 +39,6 @@ jobs:
           run_install: |
             -recursive: true
       - name: Install Playwright Browsers
-        run: pnpm dlx playwright install --with-deps
+        run: pnpm exec playwright install
       - name: Run unit tests
         run: pnpm test:unit

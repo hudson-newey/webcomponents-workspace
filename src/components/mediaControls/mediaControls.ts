@@ -10,6 +10,7 @@ export interface MediaControlsProps {
   audioDuration: number;
   disabled: boolean;
   for: string;
+  source: unknown;
 }
 
 /**
@@ -17,6 +18,8 @@ export interface MediaControlsProps {
  *
  * @csspart --primary-color - The primary color of the component
  * @csspart --rounding - The rounding of the component
+ *
+ * @slot source - A templated source input
  */
 @customElement("oe-media-controls")
 export class MediaControls extends LitElement {
@@ -29,22 +32,24 @@ export class MediaControls extends LitElement {
   }
 
   @property({ type: Boolean })
-  playing: boolean = false;
+  public playing = false;
 
   @property({ type: Number })
-  currentTime = 0;
+  public currentTime = 0;
 
   @property({ type: String })
-  src = "";
+  public src;
 
   @property({ type: Number })
-  audioDuration = 0;
+  public audioDuration = 0;
 
   @property({ type: Boolean })
-  disabled = false;
+  public disabled = false;
 
   @property({ type: String })
-  for = "";
+  public for = "";
+
+  public source;
 
   static styles = [
     css`
@@ -98,45 +103,43 @@ export class MediaControls extends LitElement {
     `,
   ];
 
-  private playAudio() {
+  private playAudio(): void {
     const audio = this.shadowRoot?.querySelector("audio") as HTMLAudioElement;
     audio.play();
   }
 
-  private pauseAudio() {
+  private pauseAudio(): void {
     const audio = this.shadowRoot?.querySelector("audio") as HTMLAudioElement;
     audio.pause();
   }
 
-  private stopAudio() {
+  private stopAudio(): void {
     this.playing = false;
     this.currentTime = 0;
     this.pauseAudio();
   }
 
-  private toggleAudio() {
+  private toggleAudio(): void {
     this.playing ? this.pauseAudio() : this.playAudio();
 
     this.playing = !this.playing;
   }
 
-  private updateTime() {
+  private updateTime(): void {
     this.currentTime += 0.2;
   }
 
-  private changeTime(value) {
-    this.stopAudio();
-
+  private changeTime(value: number): void {
     this.currentTime = value;
-    this.shadowRoot.querySelector("audio").currentTime = value * 500;
+    this.shadowRoot.querySelector("audio").currentTime = this.currentTime * 500;
   }
 
-  private formatTime(time: number) {
+  private formatTime(time: number): string {
     return new Date(time * 1000).toISOString().substr(14, 5);
   }
 
-  private isDisabled() {
-    const hasSource = this.src || this.for;
+  private isDisabled(): boolean {
+    const hasSource = this.src || this.for || this.source;
     return hasSource && !this.disabled;
   }
 
@@ -162,6 +165,7 @@ export class MediaControls extends LitElement {
         @loadedmetadata=${(event) => (this.audioDuration = event.target.duration - 1)}
         preload="auto"
       >
+        <slot id="source"></slot>
         <source src="${this.src}" type="audio/flac" />
       </audio>
     `;
