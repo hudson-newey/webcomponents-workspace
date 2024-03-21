@@ -135,7 +135,7 @@ export class MediaControls extends LitElement {
   }
 
   private formatTime(time: number): string {
-    return new Date(time * 1000).toISOString().substr(14, 5);
+    return new Date(time * 1000).toISOString().substring(14, 19);
   }
 
   private isDisabled(): boolean {

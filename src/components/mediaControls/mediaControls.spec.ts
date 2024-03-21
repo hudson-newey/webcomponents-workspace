@@ -4,7 +4,7 @@ import { MediaControls } from "../mediaControls/mediaControls";
 
 const audioSrc = {
   duration: "00:04",
-  src: "http://localhost:5500/media_example.flac",
+  src: "https://api.search.acousticobservatory.org/api/v1/a2o/audio_recordings/download/flac/966100?start_offset=2210&end_offset=2215",
 };
 
 async function isAudioPlaying(component: Locator): Promise<boolean> {
@@ -24,17 +24,17 @@ async function toggleAudio(component: Locator): Promise<void> {
   await button.click();
 }
 
-test.beforeEach(async ({ page }) => {
-  await page.route(audioSrc.src, async (route) => {
-    const audioBlob = new Blob([], { type: "audio/flac" });
-    const mockResponse = new File([audioBlob], "media_example.flac", { type: "audio/flac" });
+// test.beforeEach(async ({ page }) => {
+//   await page.route(audioSrc.src, async (route) => {
+//     const audioBlob = new Blob([], { type: "audio/flac" });
+//     const mockResponse = new File([audioBlob], "media_example.flac", { type: "audio/flac" });
 
-    await route.fulfill({
-      body: Buffer.from(await mockResponse.arrayBuffer()),
-      contentType: "audio/flac",
-    });
-  });
-});
+//     await route.fulfill({
+//       body: Buffer.from(await mockResponse.arrayBuffer()),
+//       contentType: "audio/flac",
+//     });
+//   });
+// });
 
 test.describe("smoke tests", () => {
   test("should create", async ({ mount }) => {
