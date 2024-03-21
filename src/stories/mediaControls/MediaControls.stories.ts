@@ -1,16 +1,15 @@
 import { Meta, StoryObj } from "@storybook/web-components";
 import { MediaControlsProps } from "../../components/mediaControls/mediaControls";
 import "../../components/mediaControls/mediaControls";
+import { html } from "lit";
 
 type Story = StoryObj<MediaControlsProps>;
 
 const src = "http://localhost:5500/media_example.flac";
 const meta: Meta<MediaControlsProps> = {
   title: "Media Controls",
-  component: "oe-media-controls",
-  // render: (args) => html`<oe-media-controls src=${args.src}>
-  //   <source slot="source" src=${args.src} type="audio/flac" />
-  // </oe-media-controls>`,
+  // component: "oe-media-controls",
+  render: (args) => html`<oe-media-controls src=${args.src}> </oe-media-controls>`,
 };
 
 export default meta;
@@ -28,7 +27,11 @@ export const MediaControlsWithStartingPoint: Story = {
   },
 };
 
-export const MediaControlsWithSlotSource: Story = {};
+export const MediaControlsWithSlotSource: Story = {
+  args: {
+    source: "http://localhost:5500/media_example.flac",
+  },
+};
 
 export const EmptyMediaControlsWithoutData: Story = {};
 
