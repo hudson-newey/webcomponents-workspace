@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.5.2](https://github.com/hudson-newey/webcomponents-workspace/compare/web-components-v1.5.1...web-components-v1.5.2) (2024-03-21)
+
+
+### Bug Fixes
+
+* done ([cfb5927](https://github.com/hudson-newey/webcomponents-workspace/commit/cfb5927bb6f7de37456edd15d034a603dde29fe1))
+* staging ([e388c48](https://github.com/hudson-newey/webcomponents-workspace/commit/e388c480a54f284f47088ac5bd7ce6cfe7e1debc))
+
 ## [1.5.1](https://github.com/hudson-newey/webcomponents-workspace/compare/web-components-v1.5.0...web-components-v1.5.1) (2024-03-21)
 
 
