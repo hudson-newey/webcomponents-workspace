@@ -1,1 +1,3 @@
-# Web-components workspace example
+# Web-components example
+
+Some example components created with the web components workspace

@@ -28,8 +28,8 @@
     },
     "explorer.compactFolders": false,
     "cSpell.caseSensitive": true,
-    "cSpell.words": ["ecoacoustics"],
-    "cSpell.ignorePaths": ["**/.vscode/**", "**/node_modules/**", "**/dist/**", "webcomponents.code-workspace"]
+    "cSpell.words": ["ecoacoustics", "csspart", "slotchange"],
+    "cSpell.ignorePaths": ["**/node_modules/**", "**/dist/**", "webcomponents.code-workspace"]
   },
   "extensions": {
     "recommendations": [
@@ -47,14 +47,14 @@
       "zignd.html-css-class-completion",
       "yzhang.markdown-all-in-one",
       "davidanson.vscode-markdownlint",
-      "unifiedjs.vscode-mdx",
       "yoavbls.pretty-ts-errors",
       "visualstudioexptteam.vscodeintellicode",
       "visualstudioexptteam.intellicode-api-usage-examples",
       "ms-playwright.playwright",
       "ms-vscode.vscode-typescript-next",
       "bierner.lit-html",
-      "ecmel.vscode-html-css"
+      "ecmel.vscode-html-css",
+      "pushqrdx.inline-html"
     ]
   },
   "launch": {

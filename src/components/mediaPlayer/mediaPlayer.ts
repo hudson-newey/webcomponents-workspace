@@ -1,16 +1,12 @@
 import { html, LitElement } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
-@customElement("oe-audio-element")
+@customElement("oe-media-player")
 export class AudioElement extends LitElement {
-  public constructor() {
-    super();
-  }
-
   @property({ type: String })
-  public src;
+  public src: string;
 
   public render() {
-    return html`<audio id="media-output" src="${this.src}" controls></audio>`;
+    return html`<audio src="${this.src}"></audio>`;
   }
 }

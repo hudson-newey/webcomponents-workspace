@@ -3,6 +3,6 @@
 // from the .js directory
 
 export * from "./todoList/todoList";
-export * from "./audioElement/audioElement";
+export * from "./mediaPlayer/mediaPlayer";
 export * from "./inlineList/inlineList";
 export * from "./mediaControls/mediaControls";

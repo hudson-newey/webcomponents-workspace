@@ -21,9 +21,6 @@ export const mediaControlsStyles = css`
 
   #action-button {
     display: flex;
-    color: white !important;
-    fill: white !important;
-    stroke: white !important;
     align-items: center;
     justify-content: center;
     background-color: transparent;

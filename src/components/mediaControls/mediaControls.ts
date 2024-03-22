@@ -1,5 +1,5 @@
 import { LitElement, html } from "lit";
-import { customElement, property } from "lit/decorators.js";
+import { customElement, property, state } from "lit/decorators.js";
 import lucidPlayIcon from "lucide-static/icons/play.svg";
 import lucidPauseIcon from "lucide-static/icons/pause.svg";
 import { mediaControlsStyles } from "./css/style";
@@ -13,55 +13,56 @@ export interface MediaControlsProps {
 /**
  * A simple media player with play/pause and seek functionality that can be used with the open ecoacoustics spectrograms and components.
  *
- * @csspart --primary-color - The primary color of the component
- * @csspart --rounding - The rounding of the component
+ * @csspart play-icon - Styling applied to the play icon (including default)
+ * @csspart pause-icon - Styling applied to the pause icon (including default)
  *
  * @slot play-icon - The icon to display when the media is stopped
  * @slot pause-icon - The icon to display when the media is playing
  */
 @customElement("oe-media-controls")
 export class MediaControls extends LitElement {
-  public constructor() {
-    super();
-  }
+  public static styles = mediaControlsStyles;
 
-  @property({ type: Boolean })
+  @property({ type: String })
+  public for: string;
+
+  @state()
   public playing = false;
 
-  @property({ type: String })
-  public src;
-
-  @property({ type: String })
-  public for;
-
-  static styles = [mediaControlsStyles];
-
-  private audioElement(): HTMLAudioElement {
-    return this.shadowRoot.querySelector<HTMLAudioElement>("audio");
-  }
-
-  private playAudio(): void {
-    // this.audioElement().toggleAttribute("playing");
-    this.audioElement().play();
-    this.playing = true;
-  }
-
-  private pauseAudio(): void {
-    this.audioElement().pause();
-    this.playing = false;
-  }
-
   private toggleAudio(): void {
-    this.playing ? this.pauseAudio() : this.playAudio();
+    const audioElement = document
+      .querySelector<HTMLElement>(`#${this.for}`)
+      .shadowRoot.querySelector("audio") as HTMLAudioElement;
+
+    if (this.playing) {
+      audioElement.pause();
+    } else {
+      audioElement.play();
+    }
+
+    this.playing = !this.playing;
   }
 
-  private playIcon = html`<embed src="${lucidPlayIcon}"></object>`;
-  private pauseIcon = html`<embed src="${lucidPauseIcon}"></object>`;
+  private playIcon() {
+    return html`
+      <slot name="play-icon" part="play-icon">
+        <embed src="${lucidPlayIcon}"></object>
+      </slot>
+    `;
+  }
+
+  private pauseIcon() {
+    return html`
+      <slot name="pause-icon" part="pause-icon" part="pause-icon">
+        <embed src="${lucidPauseIcon}"></object>
+      </slot>
+    `;
+  }
 
   public render() {
     return html`
       <button id="action-button" @click="${() => this.toggleAudio()}">
-        ${this.playing ? this.pauseIcon : this.playIcon}
+        ${this.playing ? this.pauseIcon() : this.playIcon()}
       </button>
     `;
   }

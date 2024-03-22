@@ -8,6 +8,22 @@
   </head>
 
   <body>
-    <my-todo-list name="world" items="[1,2,3,4]"></my-todo-list>
+    <oe-media-controls for="media">
+      <div slot="play-icon">Play Me!</div>
+    </oe-media-controls>
+
+    <oe-media-player id="media" src="http://localhost:5500/public/example.flac"></oe-media-player>
+
+    <style>
+      oe-media-controls {
+        &::part(play-icon) {
+          color: green;
+        }
+
+        &::part(pause-icon) {
+          color: red;
+        }
+      }
+    </style>
   </body>
 </html>
