@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.4](https://github.com/hudson-newey/webcomponents-workspace/compare/web-components-workspace-v1.7.3...web-components-workspace-v1.7.4) (2024-03-22)
+
+
+### Bug Fixes
+
+* Use job for re-usable workflows ([eda8af6](https://github.com/hudson-newey/webcomponents-workspace/commit/eda8af6b18a932b4f471d1d46eb71d8624732e06))
+
 ## [1.7.3](https://github.com/hudson-newey/webcomponents-workspace/compare/web-components-workspace-v1.7.2...web-components-workspace-v1.7.3) (2024-03-22)
 
 
