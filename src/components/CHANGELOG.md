@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.6](https://github.com/hudson-newey/webcomponents-workspace/compare/web-components-v1.6.5...web-components-v1.6.6) (2024-03-22)
+
+
+### Bug Fixes
+
+* change ([a52acab](https://github.com/hudson-newey/webcomponents-workspace/commit/a52acabd9f9d8155f7555358c7dc37b6c353c051))
+
 ## [1.6.5](https://github.com/hudson-newey/webcomponents-workspace/compare/web-components-v1.6.4...web-components-v1.6.5) (2024-03-22)
 
 
