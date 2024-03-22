@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.7.8](https://github.com/hudson-newey/webcomponents-workspace/compare/web-components-workspace-v1.7.7...web-components-workspace-v1.7.8) (2024-03-22)
+
+
+### Bug Fixes
+
+* github bot not being able to create tags ([21c2b75](https://github.com/hudson-newey/webcomponents-workspace/commit/21c2b758177071c3fecb1ea73e607ed10b7f1e19))
+* remove includes from package.json ([6a3c715](https://github.com/hudson-newey/webcomponents-workspace/commit/6a3c715065ecdebc1717a050ac1bf5891f067520))
+
 ## [1.7.7](https://github.com/hudson-newey/webcomponents-workspace/compare/web-components-workspace-v1.7.6...web-components-workspace-v1.7.7) (2024-03-22)
 
 

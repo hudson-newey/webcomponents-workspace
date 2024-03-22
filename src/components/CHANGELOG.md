@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.3](https://github.com/hudson-newey/webcomponents-workspace/compare/web-components-v1.6.2...web-components-v1.6.3) (2024-03-22)
+
+
+### Bug Fixes
+
+* remove includes from package.json ([6a3c715](https://github.com/hudson-newey/webcomponents-workspace/commit/6a3c715065ecdebc1717a050ac1bf5891f067520))
+
 ## [1.6.2](https://github.com/hudson-newey/webcomponents-workspace/compare/web-components-v1.6.1...web-components-v1.6.2) (2024-03-22)
 
 
