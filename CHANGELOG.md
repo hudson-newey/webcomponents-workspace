@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.7.6](https://github.com/hudson-newey/webcomponents-workspace/compare/web-components-workspace-v1.7.5...web-components-workspace-v1.7.6) (2024-03-22)
+
+
+### Bug Fixes
+
+* netlify deployment ([aa2e402](https://github.com/hudson-newey/webcomponents-workspace/commit/aa2e4023a8361c8b7f30777fa95732edfd028134))
+* publish workflow not always being run ([ac81995](https://github.com/hudson-newey/webcomponents-workspace/commit/ac8199546e2a9c7d1abf7d1d68cbe170d0533c24))
+
 ## [1.7.5](https://github.com/hudson-newey/webcomponents-workspace/compare/web-components-workspace-v1.7.4...web-components-workspace-v1.7.5) (2024-03-22)
 
 
