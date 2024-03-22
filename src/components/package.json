@@ -5,7 +5,7 @@
   "types": "@types/",
   "main": "js/index.js",
   "scripts": {
-    "build": "tsc",
+    "build": "vite build && tsc",
     "publish:components": "pnpm build && npm publish --access public"
   },
   "dependencies": {
@@ -13,6 +13,7 @@
     "lucide-static": "^0.359.0"
   },
   "devDependencies": {
-    "typescript": "^5.2.2"
+    "typescript": "^5.2.2",
+    "vite": "^4.4.7"
   }
 }

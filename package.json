@@ -23,6 +23,7 @@
     "@rollup/plugin-image": "^3.0.3",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-url": "^8.0.2",
     "@sand4rt/experimental-ct-web": "^1.41.0",
     "@types/node": "^20.11.30",
     "@webcomponents/webcomponentsjs": "^2.8.0",

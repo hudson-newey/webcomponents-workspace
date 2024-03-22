@@ -1,21 +1,19 @@
 import { defineConfig } from "vite";
 import VitePluginCustomElementsManifest from "vite-plugin-cem";
+import url from "@rollup/plugin-url";
 
+// vite config for the dev server and documentation
 export default defineConfig({
-  // TODO: we might want to use the lit compiler here lit.dev/blog/2023-10-10-lit-3.0
   plugins: [
     VitePluginCustomElementsManifest({
       files: ["./src/components/**/*.ts"],
       lit: true,
     }),
+    url({
+      fileName: "[name][extname]",
+      include: ["**/*.flac"],
+      limit: 100000,
+    }),
   ],
   server: {},
-  build: {
-    lib: {
-      name: "web-components",
-      fileName: "web-components",
-      entry: "src/components/index.ts",
-      formats: ["es"],
-    },
-  },
 });

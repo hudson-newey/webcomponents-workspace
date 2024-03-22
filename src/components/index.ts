@@ -4,5 +4,4 @@
 
 export * from "./todoList/todoList";
 export * from "./mediaPlayer/mediaPlayer";
-export * from "./inlineList/inlineList";
 export * from "./mediaControls/mediaControls";

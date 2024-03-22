@@ -46,9 +46,8 @@ jobs:
         run: |
           mkdir -p ./dist \
           && zip -r ./dist/components.zip ./src/components/js/ -x "**/node_modules/*" \
-          && cp ./src/components/js/index.js ./components.js \
           && gh release upload ${{ inputs.tag_name }} ./dist/components.zip \
-          && gh release upload ${{ inputs.tag_name }} ./components.js
+          && gh release upload ${{ inputs.tag_name }} ./components.mjs
 
   Publish-Documentation:
     name: Publish Documentation

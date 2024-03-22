@@ -1,5 +1,5 @@
 {
-  "exclude": ["**/*.spec.*", "@types/**/*"],
+  "exclude": ["**/*.spec.*", "@types/**/*", "*.config.ts"],
   "include": ["**/*.ts"],
   "compilerOptions": {
     "lib": ["ES2017", "DOM", "DOM.Iterable"],
