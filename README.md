@@ -1,7 +1,5 @@
 # Web Components Workspace
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/4cc663fa-d0c0-486b-b108-559ba35fb3ff/deploy-status)](https://app.netlify.com/sites/wc-workspace-demojtgf4zsprh/deploys)
-
 "Write once, publish anywhere"
 
 ## Online deployment of example components
@@ -11,7 +9,7 @@ Using this workspace, the [`src/components`](/src/components/) directory has bee
 - Documentation: [wc-workspace-demojtgf4zsprh.netlify.app](https://wc-workspace-demojtgf4zsprh.netlify.app)
 - NPM: [npmjs.com/package/@hudson-newey/web-components](https://www.npmjs.com/package/@hudson-newey/web-components)
 - GitHub Releases: [github.com/hudson-newey/webcomponents-workspace/releases](https://github.com/hudson-newey/webcomponents-workspace/releases)
-- CDN: [cdn.jsdelivr.net/npm/@hudson-newey/web-components/js/todoList/todoList.js/+esm](https://cdn.jsdelivr.net/npm/@hudson-newey/web-components/js/todoList/todoList.js/+esm)
+- CDN: [cdn.jsdelivr.net/npm/@hudson-newey/web-components/js/index.js/+esm](https://cdn.jsdelivr.net/npm/@hudson-newey/web-components/js/index.js/+esm)
 
 ## Workspace Configuration
 
@@ -49,10 +47,7 @@ You can import web components through the CDN
 Script tag snippet:
 
 ```html
-<script
-  type="module"
-  src="https://cdn.jsdelivr.net/npm/@hudson-newey/web-components/js/todoList/todoList.js/+esm"
-></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@hudson-newey/web-components/js/index.js/+esm"></script>
 ```
 
 Full page example:
@@ -64,10 +59,7 @@ Full page example:
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Web Component CDN Example</title>
-    <script
-      type="module"
-      src="https://cdn.jsdelivr.net/npm/@hudson-newey/web-components/js/todoList/todoList.js/+esm"
-    ></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@hudson-newey/web-components/js/index.js/+esm"></script>
   </head>
 
   <body>
@@ -88,24 +80,8 @@ $ npm i @hudson-newey/web-components
 You can then import them into a file using
 
 ```js
-import { TodoList } from "node-modules/@hudson-newey/web-components/todoList";
+import * from "node-modules/@hudson-newey/web-components/index";
 ```
-
-#### Using automatically generated TypeScript types
-
-You can use the typescript types through the following code
-
-```ts
-import { TodoList, TodoListProps } from "node-modules/@hudson-newey/webcomponents/@types/todoList";
-```
-
-### Using TypeScript (instead of JavaScript)
-
-```js
-import { TodoList } from "node-modules/@hudson-newey/web-components/js/todoList";
-```
-
-_Note: The `js/` directory in the from file path_
 
 ### GitHub Releases
 
