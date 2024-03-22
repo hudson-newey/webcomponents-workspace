@@ -6,8 +6,7 @@
   "scripts": {
     "dev": "vite",
     "start:docs": "vite ./dist/docs/",
-    "build:docs": "rimraf build/ && pnpm build:components && vite build && eleventy --config=.eleventy.cjs && cp -r ./public/* ./dist/docs",
-    "build:components": "cem analyze --litelement --globs \"src/components/**/*.ts\"",
+    "build:docs": "rimraf build/ && cem analyze --litelement --globs \"src/components/**/*.ts\" && vite build && eleventy --config=.eleventy.cjs && cp -r ./public/* ./dist/docs",
     "publish:components": "pnpm -C src/components run publish:components",
     "test": "pnpm test:unit; pnpm test:e2e",
     "test:unit": "playwright test components/",
