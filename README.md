@@ -80,7 +80,7 @@ $ npm i @hudson-newey/web-components
 You can then import them into a file using
 
 ```js
-import * from "node-modules/@hudson-newey/web-components/index";
+import * from "@hudson-newey/web-components";
 ```
 
 ### GitHub Releases
