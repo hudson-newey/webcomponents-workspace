@@ -28,6 +28,6 @@ jobs:
 
       - name: Publish release
         if: ${{ steps.release.outputs.release_created }}
-        uses: ./.github/workflows/publish.yml
+        uses: ./.github/workflows/publish
         with:
           tag_name: ${{ steps.release.outputs.tag_name }}
