@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.3](https://github.com/hudson-newey/webcomponents-workspace/compare/web-components-workspace-v1.7.2...web-components-workspace-v1.7.3) (2024-03-22)
+
+
+### Bug Fixes
+
+* workflow ([127970f](https://github.com/hudson-newey/webcomponents-workspace/commit/127970fef1718abef74db0411d97097901a7f262))
+
 ## [1.7.2](https://github.com/hudson-newey/webcomponents-workspace/compare/web-components-workspace-v1.7.1...web-components-workspace-v1.7.2) (2024-03-22)
 
 
