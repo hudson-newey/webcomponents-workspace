@@ -5,7 +5,6 @@ import { customElement, property } from "lit/decorators.js";
 export class MediaPlayer extends LitElement {
   @property({ type: String })
   public src: string;
-  // change
 
   public render() {
     return html`<audio src="${this.src}"></audio>`;
