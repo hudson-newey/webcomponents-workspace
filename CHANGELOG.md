@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.2](https://github.com/hudson-newey/webcomponents-workspace/compare/web-components-workspace-v1.7.1...web-components-workspace-v1.7.2) (2024-03-22)
+
+
+### Bug Fixes
+
+* Correctly use publish workflow ([95aadff](https://github.com/hudson-newey/webcomponents-workspace/commit/95aadff1e9a32c97dd8fbf8624541ef4911f8baa))
+
 ## [1.7.1](https://github.com/hudson-newey/webcomponents-workspace/compare/web-components-workspace-v1.7.0...web-components-workspace-v1.7.1) (2024-03-22)
 
 
