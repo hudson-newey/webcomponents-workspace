@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.10](https://github.com/hudson-newey/webcomponents-workspace/compare/web-components-workspace-v1.7.9...web-components-workspace-v1.7.10) (2024-03-22)
+
+
+### Bug Fixes
+
+* Statically bundle github releases components ([c061c48](https://github.com/hudson-newey/webcomponents-workspace/commit/c061c4881508e6bcfa18658cd6157cc40166314a))
+
 ## [1.7.9](https://github.com/hudson-newey/webcomponents-workspace/compare/web-components-workspace-v1.7.8...web-components-workspace-v1.7.9) (2024-03-22)
 
 

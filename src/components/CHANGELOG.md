@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.5](https://github.com/hudson-newey/webcomponents-workspace/compare/web-components-v1.6.4...web-components-v1.6.5) (2024-03-22)
+
+
+### Bug Fixes
+
+* Statically bundle github releases components ([c061c48](https://github.com/hudson-newey/webcomponents-workspace/commit/c061c4881508e6bcfa18658cd6157cc40166314a))
+
 ## [1.6.4](https://github.com/hudson-newey/webcomponents-workspace/compare/web-components-v1.6.3...web-components-v1.6.4) (2024-03-22)
 
 
