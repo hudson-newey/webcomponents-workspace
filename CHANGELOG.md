@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.9](https://github.com/hudson-newey/webcomponents-workspace/compare/web-components-workspace-v1.7.8...web-components-workspace-v1.7.9) (2024-03-22)
+
+
+### Features
+
+* create shorthand for components ([fdbe93b](https://github.com/hudson-newey/webcomponents-workspace/commit/fdbe93baf1d0ec8bdac9a235a246b16eeebae60a))
+
 ## [1.7.8](https://github.com/hudson-newey/webcomponents-workspace/compare/web-components-workspace-v1.7.7...web-components-workspace-v1.7.8) (2024-03-22)
 
 
