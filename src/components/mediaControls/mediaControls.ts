@@ -5,13 +5,13 @@ import lucidPauseIcon from "lucide-static/icons/pause.svg";
 import { mediaControlsStyles } from "./css/style";
 
 export interface MediaControlsProps {
-  playing: boolean;
-  src: string;
   for: string;
 }
 
 /**
  * A simple media player with play/pause and seek functionality that can be used with the open ecoacoustics spectrograms and components.
+ *
+ * @property for - The id of the audio element to control
  *
  * @csspart play-icon - Styling applied to the play icon (including default)
  * @csspart pause-icon - Styling applied to the pause icon (including default)

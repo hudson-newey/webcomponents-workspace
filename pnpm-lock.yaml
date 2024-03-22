@@ -130,7 +130,7 @@ packages:
       is-glob: 4.0.3
       iso-639-1: 2.1.15
       kleur: 4.1.5
-      liquidjs: 10.10.1
+      liquidjs: 10.10.2
       luxon: 3.4.4
       markdown-it: 13.0.2
       micromatch: 4.0.5
@@ -2236,8 +2236,8 @@ packages:
       uc.micro: 1.0.6
     dev: true
 
-  /liquidjs@10.10.1:
-    resolution: {integrity: sha512-h699VW79OLoshCTjFF02tmRCrd8t/E49LSIsjLwlg4k0TbMVjxsCRXVUEsURXbfKl3HUln2cShlDQCrSNm2YaA==}
+  /liquidjs@10.10.2:
+    resolution: {integrity: sha512-UcuTUexKg/8CmX6I5KNghk13pl3c8Rqhm+WSWqrc17pQP9LjpYPpOLDKG9OMBeHDBQ70yyn/GOqyZ/EKJ4z5yg==}
     engines: {node: '>=14'}
     hasBin: true
     dependencies:

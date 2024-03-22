@@ -2,7 +2,7 @@ import { html, LitElement } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
 @customElement("oe-media-player")
-export class AudioElement extends LitElement {
+export class MediaPlayer extends LitElement {
   @property({ type: String })
   public src: string;
 
