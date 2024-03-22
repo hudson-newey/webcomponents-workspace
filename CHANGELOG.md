@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.8.0](https://github.com/hudson-newey/webcomponents-workspace/compare/web-components-workspace-v1.7.10...web-components-workspace-v1.8.0) (2024-03-22)
+
+
+### Features
+
+* Add comment to CI documentation previews ([15239e7](https://github.com/hudson-newey/webcomponents-workspace/commit/15239e7ed119cbc95291a62ef82d93fa0a1474b0))
+
+
+### Bug Fixes
+
+* change ([a52acab](https://github.com/hudson-newey/webcomponents-workspace/commit/a52acabd9f9d8155f7555358c7dc37b6c353c051))
+
 ## [1.7.10](https://github.com/hudson-newey/webcomponents-workspace/compare/web-components-workspace-v1.7.9...web-components-workspace-v1.7.10) (2024-03-22)
 
 
