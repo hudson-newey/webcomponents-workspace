@@ -1,7 +1,7 @@
 {
   "name": "@hudson-newey/web-components",
   "description": "My web components",
-  "version": "1.5.1",
+  "version": "1.6.0",
   "types": "@types/",
   "scripts": {
     "build": "tsc",
