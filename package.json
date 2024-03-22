@@ -29,6 +29,6 @@
     "typescript": "^5.2.2",
     "typescript-eslint": "^7.0.1",
     "vite": "^5.0.8",
-    "vite-plugin-cem": "^0.6.0"
+    "vite-plugin-cem": "^0.7.0"
   }
 }
