@@ -4,7 +4,7 @@ name: Publish
 on:
   push:
     branches:
-      - main
+      - sdjshfjksdhgjkhgjklhdfjghjkshdfgjklfhdjkghsfjkldkgh
 
 jobs:
   Publish-Assets:
