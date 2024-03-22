@@ -9,6 +9,9 @@ jobs:
   Create-Release:
     name: Create Release request
     runs-on: ubuntu-latest
+    outputs:
+      release_created: ${{ steps.release.outputs.release_created }}
+      tag_name: ${{ steps.release.outputs.tag_name }}
     permissions:
       contents: write
       pull-requests: write
@@ -20,14 +23,10 @@ jobs:
           token: ${{ secrets.MY_RELEASE_PLEASE_TOKEN }}
           config-file: release-please-config.json
 
-      - name: Checkout
-        if: ${{ steps.release.outputs.release_created }}
-        uses: actions/checkout@v3
-        with:
-          ref: ${{ github.ref }}
-
-      - name: Publish release
-        if: ${{ steps.release.outputs.release_created }}
-        uses: ./.github/workflows/publish
-        with:
-          tag_name: ${{ steps.release.outputs.tag_name }}
+  Publish-Release:
+    needs: Create-Release
+    if: ${{ needs.Create-Release.outputs.release_created }}
+    uses: ./.github/workflows/publish.yml
+    with:
+      tag_name: ${{ needs.Create-Release.outputs.tag_name }}
+    secrets: inherit
