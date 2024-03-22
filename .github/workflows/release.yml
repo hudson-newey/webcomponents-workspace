@@ -12,9 +12,7 @@ jobs:
     outputs:
       release_created: ${{ steps.release.outputs.release_created }}
       tag_name: ${{ steps.release.outputs.tag_name }}
-    permissions:
-      contents: write
-      pull-requests: write
+    permissions: write-all
 
     steps:
       - uses: google-github-actions/release-please-action@v4
