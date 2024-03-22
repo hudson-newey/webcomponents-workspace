@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.7](https://github.com/hudson-newey/webcomponents-workspace/compare/web-components-workspace-v1.7.6...web-components-workspace-v1.7.7) (2024-03-22)
+
+
+### Bug Fixes
+
+* Use github bot in actions and fix npm publishing ([816b9d0](https://github.com/hudson-newey/webcomponents-workspace/commit/816b9d0b12e86e05ce37ff8dd66d7ad2b1ab0987))
+
 ## [1.7.6](https://github.com/hudson-newey/webcomponents-workspace/compare/web-components-workspace-v1.7.5...web-components-workspace-v1.7.6) (2024-03-22)
 
 

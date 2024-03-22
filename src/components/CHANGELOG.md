@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.2](https://github.com/hudson-newey/webcomponents-workspace/compare/web-components-v1.6.1...web-components-v1.6.2) (2024-03-22)
+
+
+### Bug Fixes
+
+* Use github bot in actions and fix npm publishing ([816b9d0](https://github.com/hudson-newey/webcomponents-workspace/commit/816b9d0b12e86e05ce37ff8dd66d7ad2b1ab0987))
+
 ## [1.6.1](https://github.com/hudson-newey/webcomponents-workspace/compare/web-components-v1.6.0...web-components-v1.6.1) (2024-03-22)
 
 
