@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.1](https://github.com/hudson-newey/webcomponents-workspace/compare/web-components-v1.6.0...web-components-v1.6.1) (2024-03-22)
+
+
+### Bug Fixes
+
+* netlify deployment ([aa2e402](https://github.com/hudson-newey/webcomponents-workspace/commit/aa2e4023a8361c8b7f30777fa95732edfd028134))
+
 ## [1.6.0](https://github.com/hudson-newey/webcomponents-workspace/compare/web-components-v1.5.1...web-components-v1.6.0) (2024-03-22)
 
 
