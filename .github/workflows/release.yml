@@ -20,8 +20,8 @@ jobs:
           token: ${{ secrets.MY_RELEASE_PLEASE_TOKEN }}
           config-file: release-please-config.json
 
-      # - name: Publish release
-      #   if: ${{ steps.release.outputs.release_created }}
-      #   uses: publish.yml
-      #   env:
-      #     TAG_NAME: ${{ steps.release.outputs.tag_name }}
+      - name: Publish release
+        if: ${{ steps.release.outputs.release_created }}
+        uses: publish.yml
+        env:
+          TAG_NAME: ${{ steps.release.outputs.tag_name }}
