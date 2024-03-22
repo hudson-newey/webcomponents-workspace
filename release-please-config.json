@@ -3,6 +3,9 @@
   "packages": {
     "src/components": {
       "release-type": "node"
+    },
+    ".": {
+      "release-type": "node"
     }
   }
 }
