@@ -3,10 +3,6 @@
   "description": "My web components",
   "version": "1.6.2",
   "types": "@types/",
-  "include": [
-    "js/",
-    "@types/"
-  ],
   "scripts": {
     "build": "tsc",
     "publish:components": "pnpm build && npm publish --access public"
