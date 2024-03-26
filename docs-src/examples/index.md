@@ -1,9 +1,13 @@
 ---
 layout: example.11ty.cjs
-title: <my-todo-list> ⌲ Examples ⌲ Basic
-tags: example
-name: Basic
-description: A basic example
+title: Webcomponents Workspace ⌲ Examples
 ---
 
-Examples go here
+# Examples
+
+## `<oe-media-controls>`
+
+```html
+<audio id="media-outlet" src="https://www.w3schools.com/tags/horse.ogg"></audio>
+<oe-media-controls for="media-outlet"></oe-media-controls>
+```

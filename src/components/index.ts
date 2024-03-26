@@ -2,5 +2,4 @@
 // if they only want to import specific web components, they can import them directly
 // from the .js directory
 
-export * from "./todoList/todoList";
 export * from "./mediaControls/mediaControls";

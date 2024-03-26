@@ -1,5 +1,5 @@
-const page = require('./page.11ty.cjs');
-const relative = require('./relative-path.cjs');
+const page = require("./page.11ty.cjs");
+const relative = require("./relative-path.cjs");
 
 module.exports = function (data) {
   return page({
@@ -8,27 +8,23 @@ module.exports = function (data) {
   });
 };
 
-const renderExample = ({name, content, collections, page}) => {
+const renderExample = ({ name, content, collections, page }) => {
   return `
-    <h1>Example: ${name}</h1>
     <section class="examples">
       <nav class="collection">
         <ul>
           ${
             collections.example === undefined
-              ? ''
+              ? ""
               : collections.example
                   .map(
                     (post) => `
-                  <li class=${post.url === page.url ? 'selected' : ''}>
-                    <a href="${relative(
-                      page.url,
-                      post.url
-                    )}">${post.data.description.replace(/</g, '&lt;')}</a>
+                  <li class=${post.url === page.url ? "selected" : ""}>
+                    <a href="${relative(page.url, post.url)}">${post.data.description.replace(/</g, "&lt;")}</a>
                   </li>
-                `
+                `,
                   )
-                  .join('')
+                  .join("")
           }
         </ul>
       </nav>

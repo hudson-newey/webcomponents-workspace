@@ -5,28 +5,23 @@ title: Web Components Workspace Documentation
 
 # Install
 
-`<my-todo-list>` is distributed on npm, so you can install it locally or use it via npm CDNs like unpkg.com.
-
-## Local Installation
-
-```bash
-npm i my-todo-list
-```
-
 ## CDN
 
-npm CDNs like [unpkg.com]() can directly serve files that have been published to npm. This works great for standard JavaScript modules that the browser can load natively.
+All JavaScript files are automatically deployed [jsdelivr](https://www.jsdelivr.com/package/npm/@hudson-newey/web-components)
 
-For this element to work from unpkg.com specifically, you need to include the `?module` query parameter, which tells unpkg.com to rewrite "bare" module specifiers to full URLs.
-
-### HTML
+To use the CDN, simply add the following code into the `<head>` tag of your website
 
 ```html
-<script type="module" src="https://unpkg.com/my-todo-list?module"></script>
+<script type="module" src="https://esm.run/@hudson-newey/web-components"></script>
 ```
 
-### JavaScript
+## Install via NPM
 
-```html
-import {MyElement} from 'https://unpkg.com/my-todo-list?module';
+```sh
+$ npm i @hudson-newey/webcomponents-workspace
+>
 ```
+
+## Manually Install JS Files
+
+You can find all releases on [github](https://github.com/hudson-newey/webcomponents-workspace/releases)

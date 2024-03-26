@@ -123,17 +123,6 @@ section.columns > div {
   flex: 1;
 }
 
-section.examples {
-  display: grid;
-  grid-template-columns: 240px minmax(400px, 784px);
-  grid-gap: 48px;
-  justify-content: center;
-}
-
-section.examples h2:first-of-type {
-  margin-top: 0;
-}
-
 table {
   width: 100%;
   border-collapse: collapse;

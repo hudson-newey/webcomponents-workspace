@@ -12,12 +12,13 @@ module.exports = class Docs {
     };
   }
 
-  render(data) {
+  render() {
     const manifest = JSON.parse(fs.readFileSync("custom-elements.json"));
     const elements = manifest.modules.reduce(
       (els, module) => els.concat(module.declarations?.filter((dec) => dec.customElement) ?? []),
       [],
     );
+
     return `
        <h1>API</h1>
        ${elements
