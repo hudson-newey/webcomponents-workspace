@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.10.2](https://github.com/hudson-newey/webcomponents-workspace/compare/web-components-v1.10.1...web-components-v1.10.2) (2024-03-26)
+
+
+### Bug Fixes
+
+* GitHub release artifact uploads ([872ffce](https://github.com/hudson-newey/webcomponents-workspace/commit/872ffce646aa98ac1976ecfaec27f6838e0a25cf))
+* Update docs ([7063b67](https://github.com/hudson-newey/webcomponents-workspace/commit/7063b6707443079a0233adc10241f4148751de5a))
+
 ## [1.10.1](https://github.com/hudson-newey/webcomponents-workspace/compare/web-components-v1.10.0...web-components-v1.10.1) (2024-03-26)
 
 
