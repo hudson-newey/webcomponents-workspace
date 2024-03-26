@@ -1,6 +1,9 @@
 name: Deploy Documentation Preview on Netlify
 
-on: [pull_request]
+on:
+  pull_request:
+    branches:
+      - main
 
 jobs:
   Documentation-Preview:

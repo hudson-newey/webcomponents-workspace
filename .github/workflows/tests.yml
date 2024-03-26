@@ -1,7 +1,10 @@
 name: Run Tests
 
 # for each release and pull request we want to run the tests
-on: [pull_request]
+on:
+  pull_request:
+    branches:
+      - main
 
 jobs:
   Unit-Tests:
