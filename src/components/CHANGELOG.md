@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.7](https://github.com/hudson-newey/webcomponents-workspace/compare/web-components-v1.6.6...web-components-v1.6.7) (2024-03-26)
+
+
+### Bug Fixes
+
+* Use netlify action and simplify docs ([8811c2c](https://github.com/hudson-newey/webcomponents-workspace/commit/8811c2c86b93afb306268d86acb5421d671acd99))
+
 ## [1.6.6](https://github.com/hudson-newey/webcomponents-workspace/compare/web-components-v1.6.5...web-components-v1.6.6) (2024-03-22)
 
 

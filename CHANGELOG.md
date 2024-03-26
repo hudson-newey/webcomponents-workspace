@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.8.1](https://github.com/hudson-newey/webcomponents-workspace/compare/web-components-workspace-v1.8.0...web-components-workspace-v1.8.1) (2024-03-26)
+
+
+### Bug Fixes
+
+* Use netlify action and simplify docs ([8811c2c](https://github.com/hudson-newey/webcomponents-workspace/commit/8811c2c86b93afb306268d86acb5421d671acd99))
+
 ## [1.8.0](https://github.com/hudson-newey/webcomponents-workspace/compare/web-components-workspace-v1.7.10...web-components-workspace-v1.8.0) (2024-03-22)
 
 
