@@ -1,21 +1,23 @@
 {
-  "name": "web-components-workspace",
-  "private": true,
-  "version": "1.9.0",
+  "name": "@hudson-newey/web-components",
+  "description": "My web components",
+  "version": "1.8.1",
+  "types": "@types/",
+  "main": "js/index.js",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "start:docs": "vite ./dist/docs/",
     "build:docs": "rimraf build/ && cem analyze --litelement --globs \"src/components/**/*.ts\" && vite build && eleventy --config=.eleventy.cjs && cp -r ./public/* ./dist/docs",
     "build:components": "vite build && tsc",
-    "publish:components": "pnpm build:component && npm publish --access public",
+    "publish:components": "pnpm build:components && npm publish --access public",
     "test": "pnpm test:unit; pnpm test:e2e",
     "test:unit": "playwright test components/",
     "test:e2e": "playwright test tests/",
     "lint": "eslint ."
   },
   "files": [
-    "src/components"
+    "src/components/"
   ],
   "customElements": "custom-elements.json",
   "dependencies": {

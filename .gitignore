@@ -1,5 +1,5 @@
-src/components/@types/
-src/components/js/
+@types/
+js/
 
 # playwright
 test-results/

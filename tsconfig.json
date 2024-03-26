@@ -7,8 +7,8 @@
     "module": "ESNext",
     "types": ["vite/client"],
 
-    "outDir": "src/components/js",
-    "declarationDir": "src/components/@types",
+    "outDir": "js",
+    "declarationDir": "@types",
     "declaration": true,
 
     "baseUrl": "src/components",

@@ -1,2 +1,6 @@
 # to minimise bundle size, we don't publish tests to npm
 **/*.spec.ts
+
+# because we are only publishing the src/components directory, we don't want to
+# include the workspace README (only the components readme)
+README.md

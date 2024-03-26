@@ -17,7 +17,8 @@ export default defineConfig({
   ],
   server: {},
   build: {
-    outDir: "src/components/js",
+    outDir: "js/",
+    copyPublicDir: false,
     lib: {
       name: "components",
       fileName: "components",
