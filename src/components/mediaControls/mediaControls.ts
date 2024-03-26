@@ -24,7 +24,7 @@ export class MediaControls extends LitElement {
   public static styles = mediaControlsStyles;
 
   @property({ type: String })
-  public for: string;
+  public for: string = "";
 
   @state()
   public playing = false;

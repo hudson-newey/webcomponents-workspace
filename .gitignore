@@ -1,3 +1,6 @@
+src/components/@types/
+src/components/js/
+
 # playwright
 test-results/
 **/*custom-elements.json

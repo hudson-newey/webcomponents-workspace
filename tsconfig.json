@@ -1,18 +1,25 @@
 {
-  "include": ["src", "playwright", "."],
+  "exclude": ["**/*.spec.ts", "**/*.d.ts", "*.config.ts"],
   "compilerOptions": {
-    "target": "ES2017",
-    "module": "ESNext",
     "lib": ["ES2017", "DOM", "DOM.Iterable"],
-    "skipLibCheck": true,
+    "target": "ES2017",
+    "newLine": "lf",
+    "module": "ESNext",
     "types": ["vite/client"],
+
+    "outDir": "src/components/js",
+    "declarationDir": "src/components/@types",
+    "declaration": true,
+
+    "baseUrl": "src/components",
+    "paths": {
+      "": ["node_modules"]
+    },
 
     /* Bundler mode */
     "moduleResolution": "Bundler",
-    "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
 
     /* Linting */
     "strict": true,

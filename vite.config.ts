@@ -16,4 +16,13 @@ export default defineConfig({
     }),
   ],
   server: {},
+  build: {
+    outDir: "src/components/js",
+    lib: {
+      name: "components",
+      fileName: "components",
+      entry: "src/components/index.ts",
+      formats: ["es"],
+    },
+  },
 });

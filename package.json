@@ -1,20 +1,27 @@
 {
   "name": "web-components-workspace",
   "private": true,
-  "version": "1.8.0",
+  "version": "1.7.10",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "start:docs": "vite ./dist/docs/",
     "build:docs": "rimraf build/ && cem analyze --litelement --globs \"src/components/**/*.ts\" && vite build && eleventy --config=.eleventy.cjs && cp -r ./public/* ./dist/docs",
-    "build:components": "pnpm -C src/components run build",
-    "publish:components": "pnpm -C src/components run publish:components",
+    "build:components": "vite build && tsc",
+    "publish:components": "pnpm build:component && npm publish --access public",
     "test": "pnpm test:unit; pnpm test:e2e",
     "test:unit": "playwright test components/",
     "test:e2e": "playwright test tests/",
     "lint": "eslint ."
   },
+  "files": [
+    "src/components"
+  ],
   "customElements": "custom-elements.json",
+  "dependencies": {
+    "lit": "^3.1.2",
+    "lucide-static": "^0.363.0"
+  },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
@@ -28,7 +35,6 @@
     "@types/node": "^20.11.30",
     "@webcomponents/webcomponentsjs": "^2.8.0",
     "eslint": "^8.57.0",
-    "lit": "^3.1.2",
     "rimraf": "^5.0.5",
     "rollup-plugin-minify-html-literals": "^1.2.6",
     "rollup-plugin-summary": "^2.0.0",
