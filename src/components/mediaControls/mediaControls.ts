@@ -1,10 +1,10 @@
 import { LitElement, html } from "lit";
-import { consume } from "@lit/context";
+// import { consume } from "@lit/context";
 import { customElement, property, state } from "lit/decorators.js";
 import lucidPlayIcon from "lucide-static/icons/play.svg";
 import lucidPauseIcon from "lucide-static/icons/pause.svg";
 import { mediaControlsStyles } from "./css/style";
-import { Logger, root } from "logger/logger";
+// import { Logger, root } from "logger/logger";
 
 export interface MediaControlsProps {
   for: string;
@@ -25,9 +25,9 @@ export interface MediaControlsProps {
 export class MediaControls extends LitElement {
   public static styles = mediaControlsStyles;
 
-  @consume({ context: root, subscribe: true })
-  @property({ attribute: false })
-  public logger?: Logger;
+  // @consume({ context: root, subscribe: true })
+  // @property({ attribute: false })
+  // public logger: Logger;
 
   @property({ type: String })
   public for: string = "";
