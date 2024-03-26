@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.10.1](https://github.com/hudson-newey/webcomponents-workspace/compare/web-components-v1.10.0...web-components-v1.10.1) (2024-03-26)
+
+
+### Bug Fixes
+
+* Bugs in workflow ([2e90948](https://github.com/hudson-newey/webcomponents-workspace/commit/2e90948d683e8a26cbd05cd53b5c4555252aa9f7))
+* Minimise bundle size on npm ([c2becc4](https://github.com/hudson-newey/webcomponents-workspace/commit/c2becc4a12ad0f58fd013a4beac89aa005bed08e))
+* NPM publishing ([dcebe35](https://github.com/hudson-newey/webcomponents-workspace/commit/dcebe3511b32e4b57d0e84d03dfdb0bed162174d))
+
 ## [1.10.0](https://github.com/hudson-newey/webcomponents-workspace/compare/web-components-v1.9.0...web-components-v1.10.0) (2024-03-26)
 
 
