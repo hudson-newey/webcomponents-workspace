@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.8.1](https://github.com/hudson-newey/webcomponents-workspace/compare/web-components-workspace-v1.8.0...web-components-workspace-v1.8.1) (2024-03-26)
+
+
+### Bug Fixes
+
+* Add additional persmission to CI ([ac0d33c](https://github.com/hudson-newey/webcomponents-workspace/commit/ac0d33cd35dbd0427e50d817907c8b3062327c2e))
+* CI ([c7848f4](https://github.com/hudson-newey/webcomponents-workspace/commit/c7848f467d081a2bb55a3cdb544a9a0e47acb054))
+* CI in PRs ([bcafa7c](https://github.com/hudson-newey/webcomponents-workspace/commit/bcafa7c6cba381feed7fc0d552059f326d4917a6))
+* Expand triggers preview workflow ([5b4cd51](https://github.com/hudson-newey/webcomponents-workspace/commit/5b4cd511a7392e88a636e47edfa3929f7997ecc9))
+* remove npm workspaces ([7aee7a9](https://github.com/hudson-newey/webcomponents-workspace/commit/7aee7a9ede4dd2d4491297c0975d94b88de9a5e3))
+* Use netlify action and simplify docs ([8811c2c](https://github.com/hudson-newey/webcomponents-workspace/commit/8811c2c86b93afb306268d86acb5421d671acd99))
+
 ## [1.8.0](https://github.com/hudson-newey/webcomponents-workspace/compare/web-components-workspace-v1.7.10...web-components-workspace-v1.8.0) (2024-03-22)
 
 
