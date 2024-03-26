@@ -1,10 +1,8 @@
 name: Run Tests
 
-# for each release and pull request we want to run the tests
-on: pull_request
-permissions:
-  pull-requests: write
-  contents: write
+on:
+  - push
+  - pull_request
 
 jobs:
   Unit-Tests:
