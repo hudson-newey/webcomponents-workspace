@@ -1,8 +1,6 @@
 name: Deploy Documentation Preview on Netlify
 
-on:
-  - push
-  - pull_request
+on: pull_request
 
 jobs:
   Documentation-Preview:
@@ -26,6 +24,7 @@ jobs:
         with:
           publish-dir: "./dist/docs"
           production-branch: main
+          production-deploy: false
           github-token: ${{ secrets.GITHUB_TOKEN }}
           deploy-message: "Documentation Deployment Preview"
         env:
