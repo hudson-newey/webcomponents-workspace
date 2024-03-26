@@ -1,9 +1,9 @@
 name: Deploy Documentation Preview on Netlify
 
-on:
-  pull_request:
-    branches:
-      - main
+on: pull_request
+permissions:
+  pull-requests: write
+  contents: write
 
 jobs:
   Documentation-Preview:
