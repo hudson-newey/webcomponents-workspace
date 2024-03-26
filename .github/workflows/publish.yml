@@ -44,10 +44,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          mkdir -p ./dist \
-          && zip -r ./dist/components.zip ./src/components/js/ -x "**/node_modules/*" \
-          && gh release upload ${{ inputs.tag_name }} ./dist/components.zip \
-          && gh release upload ${{ inputs.tag_name }} ./src/components/js/components.mjs
+          set -e
+          mkdir -p ./dist
+          zip -r ./dist/components.zip ./src/components/js/ -x "**/node_modules/*"
+          gh release upload ${{ inputs.tag_name }} ./dist/components.zip
+          gh release upload ${{ inputs.tag_name }} ./src/components/js/components.mjs
 
   Publish-Documentation:
     name: Publish Documentation
@@ -69,10 +70,14 @@ jobs:
       - name: Build docs
         run: pnpm build:docs
 
-      - name: Publish docs
-        uses: netlify/actions/cli@master
+      - name: Deploy to Netlify
+        uses: nwtgck/actions-netlify@v3.0
         with:
-          args: deploy --dir=dist/docs --prod
+          publish-dir: "./dist/docs"
+          production-branch: main
+          production-deploy: true
+          github-token: ${{ secrets.GITHUB_TOKEN }}
         env:
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        timeout-minutes: 1

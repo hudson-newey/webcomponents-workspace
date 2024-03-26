@@ -1,5 +1,4 @@
 const header = require("./header.11ty.cjs");
-const footer = require("./footer.11ty.cjs");
 const nav = require("./nav.11ty.cjs");
 const relative = require("./relative-path.cjs");
 
@@ -26,7 +25,6 @@ module.exports = function (data) {
         ${content}
       </main>
     </div>
-    ${footer()}
   </body>
 </html>`;
-}
+};

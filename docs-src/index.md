@@ -1,77 +1,32 @@
 ---
 layout: page.11ty.cjs
-title: <my-todo-list> ⌲ Home
+title: Web Components Workspace Documentation
 ---
 
-# &lt;my-todo-list>
+# Install
 
-`<my-todo-list>` is an awesome element. It's a great introduction to building web components with LitElement, with nice documentation site as well.
+`<my-todo-list>` is distributed on npm, so you can install it locally or use it via npm CDNs like unpkg.com.
 
-## As easy as HTML
+## Local Installation
 
-<section class="columns">
-  <div>
+```bash
+npm i my-todo-list
+```
 
-`<my-todo-list>` is just an HTML element. You can it anywhere you can use HTML!
+## CDN
+
+npm CDNs like [unpkg.com]() can directly serve files that have been published to npm. This works great for standard JavaScript modules that the browser can load natively.
+
+For this element to work from unpkg.com specifically, you need to include the `?module` query parameter, which tells unpkg.com to rewrite "bare" module specifiers to full URLs.
+
+### HTML
 
 ```html
-<my-todo-list></my-todo-list>
+<script type="module" src="https://unpkg.com/my-todo-list?module"></script>
 ```
 
-  </div>
-  <div>
-
-<my-todo-list></my-todo-list>
-
-  </div>
-</section>
-
-## Configure with attributes
-
-<section class="columns">
-  <div>
-
-`<my-todo-list>` can be configured with attributed in plain HTML.
+### JavaScript
 
 ```html
-<my-todo-list name="HTML"></my-todo-list>
+import {MyElement} from 'https://unpkg.com/my-todo-list?module';
 ```
-
-  </div>
-  <div>
-
-<my-todo-list name="HTML"></my-todo-list>
-
-  </div>
-</section>
-
-## Declarative rendering
-
-<section class="columns">
-  <div>
-
-`<my-todo-list>` can be used with declarative rendering libraries like Angular, React, Vue, and lit-html
-
-```js
-import {html, render} from 'lit-html';
-
-const name = 'lit-html';
-
-render(
-  html`
-    <h2>This is a &lt;my-todo-list&gt;</h2>
-    <my-todo-list .name=${name}></my-todo-list>
-  `,
-  document.body
-);
-```
-
-  </div>
-  <div>
-
-<h2>This is a &lt;my-todo-list&gt;</h2>
-<my-todo-list name="lit-html"></my-todo-list>
-
-  </div>
-</section>
-

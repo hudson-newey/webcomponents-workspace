@@ -30,9 +30,7 @@ export class MediaControls extends LitElement {
   public playing = false;
 
   private toggleAudio(): void {
-    const audioElement = document
-      .querySelector<HTMLElement>(`#${this.for}`)
-      .shadowRoot.querySelector("audio") as HTMLAudioElement;
+    const audioElement = document.getElementById(this.for) as HTMLAudioElement;
 
     if (this.playing) {
       audioElement.pause();

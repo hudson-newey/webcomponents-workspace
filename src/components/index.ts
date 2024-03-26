@@ -3,5 +3,4 @@
 // from the .js directory
 
 export * from "./todoList/todoList";
-export * from "./mediaPlayer/mediaPlayer";
 export * from "./mediaControls/mediaControls";

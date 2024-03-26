@@ -61,19 +61,6 @@
     "version": "0.2.0",
     "configurations": [
       {
-        "name": "Storybook",
-        "command": "pnpm storybook",
-        "request": "launch",
-        "type": "node-terminal"
-      },
-      {
-        "name": "Test",
-        "command": "pnpm test-storybook",
-        "request": "launch",
-        "type": "node-terminal",
-        "preLaunchTask": "pnpm dlx playwright install"
-      },
-      {
         "name": "Lint",
         "command": "pnpm lint",
         "request": "launch",

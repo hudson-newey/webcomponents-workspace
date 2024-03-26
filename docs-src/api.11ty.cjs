@@ -8,12 +8,12 @@ module.exports = class Docs {
   data() {
     return {
       layout: "page.11ty.cjs",
-      title: "<my-todo-list> ⌲ Docs",
+      title: "Web Component Workspace Documentation",
     };
   }
 
   render(data) {
-    const manifest = JSON.parse(fs.readFileSync("custom-elements.json")); 
+    const manifest = JSON.parse(fs.readFileSync("custom-elements.json"));
     const elements = manifest.modules.reduce(
       (els, module) => els.concat(module.declarations?.filter((dec) => dec.customElement) ?? []),
       [],
