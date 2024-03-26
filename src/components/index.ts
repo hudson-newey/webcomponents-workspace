@@ -3,3 +3,4 @@
 // from the .js directory
 
 export * from "./mediaControls/mediaControls";
+export * from "./logger/logger";

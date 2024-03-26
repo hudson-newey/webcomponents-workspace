@@ -1,10 +1,10 @@
 import { LitElement, html } from "lit";
-// import { consume } from "@lit/context";
 import { customElement, property, state } from "lit/decorators.js";
 import lucidPlayIcon from "lucide-static/icons/play.svg";
 import lucidPauseIcon from "lucide-static/icons/pause.svg";
 import { mediaControlsStyles } from "./css/style";
-// import { Logger, root } from "logger/logger";
+import { ILogger, rootContext } from "../logger/logger";
+import { provide } from "@lit/context";
 
 export interface MediaControlsProps {
   for: string;
@@ -25,9 +25,11 @@ export interface MediaControlsProps {
 export class MediaControls extends LitElement {
   public static styles = mediaControlsStyles;
 
-  // @consume({ context: root, subscribe: true })
-  // @property({ attribute: false })
-  // public logger: Logger;
+  @provide({ context: rootContext })
+  @property({ attribute: false })
+  public logger: ILogger = {
+    log: console.log,
+  };
 
   @property({ type: String })
   public for: string = "";
@@ -45,6 +47,8 @@ export class MediaControls extends LitElement {
     }
 
     this.playing = !this.playing;
+
+    this.logger.log(`Audio ${this.playing ? "playing" : "paused"}`);
   }
 
   private playIcon() {

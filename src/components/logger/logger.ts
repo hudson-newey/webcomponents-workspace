@@ -1,8 +1,20 @@
-import { ContextRoot } from "@lit/context";
+import { consume, ContextRoot } from "@lit/context";
+import { LitElement } from "lit";
+import { property } from "lit/decorators.js";
 
-export interface Logger {
+export interface ILogger {
   log: (message: string) => void;
 }
 
-export const root = new ContextRoot();
-root.attach(document.body);
+export const rootContext = new ContextRoot();
+rootContext.attach(document.body);
+
+export class LoggerImplementation extends LitElement {
+  @consume({ context: rootContext, subscribe: true })
+  @property({ attribute: false })
+  public logger?: ILogger;
+
+  protected doThing(): void {
+    this.logger?.log("Hello, world!");
+  }
+}
