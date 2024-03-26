@@ -8,7 +8,7 @@ Using this workspace, the [`src/components`](/src/components/) directory has bee
 
 - Documentation: [wc-workspace-demojtgf4zsprh.netlify.app](https://wc-workspace-demojtgf4zsprh.netlify.app)
 - NPM: [npmjs.com/package/@hudson-newey/web-components](https://www.npmjs.com/package/@hudson-newey/web-components)
-- CDN: [jsdelivr.com/package/npm/@hudson-newey/web-components](jsdelivr.com/package/npm/@hudson-newey/web-components)
+- CDN: [jsdelivr.com/package/npm/@hudson-newey/web-components](https://www.jsdelivr.com/package/npm/@hudson-newey/web-components)
 - GitHub Releases: [github.com/hudson-newey/webcomponents-workspace/releases](https://github.com/hudson-newey/webcomponents-workspace/releases)
 
 ## Workspace Configuration
