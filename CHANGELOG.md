@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.10.5](https://github.com/hudson-newey/webcomponents-workspace/compare/web-components-v1.10.4...web-components-v1.10.5) (2024-03-27)
+
+
+### Bug Fixes
+
+* Tests running without dev server ([ea2095b](https://github.com/hudson-newey/webcomponents-workspace/commit/ea2095b9ca97b97f99794e6866ba67db5d53e5ef))
+* Update readme ([a46cd7e](https://github.com/hudson-newey/webcomponents-workspace/commit/a46cd7e15e6bae18402039333d0eb8a4dc973079))
+
 ## [1.10.4](https://github.com/hudson-newey/webcomponents-workspace/compare/web-components-v1.10.3...web-components-v1.10.4) (2024-03-27)
 
 
