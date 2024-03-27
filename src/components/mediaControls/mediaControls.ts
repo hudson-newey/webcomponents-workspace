@@ -1,8 +1,11 @@
-import { LitElement, html, svg } from "lit";
+import { LitElement, html } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
 import { mediaControlsStyles } from "./css/style";
 import { ILogger, rootContext } from "../logger/logger";
 import { provide } from "@lit/context";
+import lucidPlayIcon from "lucide-static/icons/play.svg?raw";
+import lucidPauseIcon from "lucide-static/icons/pause.svg?raw";
+import { unsafeSVG } from "lit/directives/unsafe-svg.js";
 
 export interface MediaControlsProps {
   for: string;
@@ -50,24 +53,11 @@ export class MediaControls extends LitElement {
   }
 
   private playIcon() {
-    return html`
-      <slot name="play-icon" part="play-icon">
-        <svg>
-          <polygon points="5 3 19 12 5 21 5 3"></polygon>
-        </svg>
-      </slot>
-    `;
+    return html`<slot name="play-icon" part="play-icon">${unsafeSVG(lucidPlayIcon)}</slot>`;
   }
 
   private pauseIcon() {
-    return html`
-      <slot name="pause-icon" part="pause-icon">
-        <svg>
-          <rect x="6" y="4" width="4" height="16"></rect>
-          <rect x="14" y="4" width="4" height="16"></rect>
-        </svg>
-      </slot>
-    `;
+    return html`<slot name="pause-icon" part="pause-icon">${unsafeSVG(lucidPauseIcon)}</slot>`;
   }
 
   public render() {
