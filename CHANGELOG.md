@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.10.6](https://github.com/hudson-newey/webcomponents-workspace/compare/web-components-v1.10.5...web-components-v1.10.6) (2024-03-27)
+
+
+### Bug Fixes
+
+* hacky solution of icons ([936c477](https://github.com/hudson-newey/webcomponents-workspace/commit/936c4776796678d12ad2e2bd57e50387f960f31e))
+* Logger context linting errors ([c9e6685](https://github.com/hudson-newey/webcomponents-workspace/commit/c9e6685ad796e3d0810e10ed5d3f2185636b4e2b))
+* Polish ([cf74baa](https://github.com/hudson-newey/webcomponents-workspace/commit/cf74baa66bfa5c177bdcb8b74cf5e77fc7ee8688))
+
 ## [1.10.5](https://github.com/hudson-newey/webcomponents-workspace/compare/web-components-v1.10.4...web-components-v1.10.5) (2024-03-27)
 
 
