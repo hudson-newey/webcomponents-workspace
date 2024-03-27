@@ -73,10 +73,20 @@ test.describe("slots", () => {
       <audio id="media" src="${audioSource}"></audio>
     `);
 
-    const playButton = await page.locator("oe-media-controls button > slot").first();
-    const assignedNode = await playButton.evaluate((element: HTMLSlotElement) => element.assignedElements());
+    const actionButton = await page.locator("oe-media-controls button > slot").first();
+    const slotElementText = await actionButton.evaluate((element: HTMLSlotElement) =>
+      element.assignedElements().map((element) => element.textContent),
+    );
 
-    await expect(assignedNode).toHaveLength(1);
+    await expect(slotElementText).toStrictEqual(["Play Me!"]);
+
+    // the pause icon should still be the default because we haven't changed it with a slot
+    await actionButton.click({ force: true });
+    const pauseSlotElementText = await actionButton.evaluate((element: HTMLSlotElement) =>
+      element.assignedElements().map((element) => element.textContent),
+    );
+
+    await expect(pauseSlotElementText).toHaveLength(0);
   });
 
   test("custom play and pause icon via slots", async ({ page }) => {
@@ -89,19 +99,23 @@ test.describe("slots", () => {
     `);
 
     const actionButton = await page.locator("oe-media-controls button > slot").first();
-    const assignedNodes: Element[] = await actionButton.evaluate((element: HTMLSlotElement) =>
-      element.assignedElements(),
+
+    let slotTextContent: (string | null)[] = await actionButton.evaluate((element: HTMLSlotElement) =>
+      element.assignedElements().map((element) => element.textContent),
     );
 
     // the slot should only have one assigned node at a time
     // eg. It should use the play icon slot when the audio is paused and the pause icon slot when the audio is playing
     // but never both at the same time
-    await expect(assignedNodes).toHaveLength(1);
+    await expect(slotTextContent).toStrictEqual(["Play Me!"]);
 
     // start playing audio so we can see the default pause icon
     await actionButton.click({ force: true });
+    slotTextContent = await actionButton.evaluate((element: HTMLSlotElement) =>
+      element.assignedElements().map((element) => element.textContent),
+    );
 
-    await expect(assignedNodes).toHaveLength(1);
+    await expect(slotTextContent).toStrictEqual(["Pause"]);
   });
 });
 

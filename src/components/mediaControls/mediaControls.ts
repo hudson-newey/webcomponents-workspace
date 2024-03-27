@@ -1,4 +1,4 @@
-import { LitElement, html } from "lit";
+import { LitElement, html, svg } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
 import { mediaControlsStyles } from "./css/style";
 import { ILogger, rootContext } from "../logger/logger";
