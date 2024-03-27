@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.10.4](https://github.com/hudson-newey/webcomponents-workspace/compare/web-components-v1.10.3...web-components-v1.10.4) (2024-03-27)
+
+
+### Features
+
+* logger context ([129cd16](https://github.com/hudson-newey/webcomponents-workspace/commit/129cd16831ca6edef712d27c343270998de62983))
+
 ## [1.10.3](https://github.com/hudson-newey/webcomponents-workspace/compare/web-components-v1.10.2...web-components-v1.10.3) (2024-03-26)
 
 
