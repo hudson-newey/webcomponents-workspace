@@ -1,7 +1,5 @@
 import { LitElement, html } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
-import lucidPlayIcon from "lucide-static/icons/play.svg";
-import lucidPauseIcon from "lucide-static/icons/pause.svg";
 import { mediaControlsStyles } from "./css/style";
 import { ILogger, rootContext } from "../logger/logger";
 import { provide } from "@lit/context";
@@ -54,7 +52,17 @@ export class MediaControls extends LitElement {
   private playIcon() {
     return html`
       <slot name="play-icon" part="play-icon">
-        <embed src="${lucidPlayIcon}"></object>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polygon points="5 3 19 12 5 21 5 3"></polygon>
+        </svg>
       </slot>
     `;
   }
@@ -62,7 +70,18 @@ export class MediaControls extends LitElement {
   private pauseIcon() {
     return html`
       <slot name="pause-icon" part="pause-icon">
-        <embed src="${lucidPauseIcon}"></object>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <rect x="6" y="4" width="4" height="16"></rect>
+          <rect x="14" y="4" width="4" height="16"></rect>
+        </svg>
       </slot>
     `;
   }

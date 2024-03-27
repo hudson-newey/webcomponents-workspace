@@ -23,8 +23,7 @@
   "customElements": "custom-elements.json",
   "dependencies": {
     "@lit/context": "^1.1.0",
-    "lit": "^3.1.2",
-    "lucide-static": "^0.363.0"
+    "lit": "^3.1.2"
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
