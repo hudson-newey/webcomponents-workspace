@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.11.0](https://github.com/hudson-newey/webcomponents-workspace/compare/web-components-v1.10.6...web-components-v1.11.0) (2024-03-27)
+
+
+### Features
+
+* use lucid react for icons ([c414594](https://github.com/hudson-newey/webcomponents-workspace/commit/c414594f254f0f8d81a2e98e205ff7c746d7b7f6))
+
+
+### Bug Fixes
+
+* Slot tests ([70235e8](https://github.com/hudson-newey/webcomponents-workspace/commit/70235e88bdecef6055b873f2c618bd6c4a156175))
+
 ## [1.10.6](https://github.com/hudson-newey/webcomponents-workspace/compare/web-components-v1.10.5...web-components-v1.10.6) (2024-03-27)
 
 
