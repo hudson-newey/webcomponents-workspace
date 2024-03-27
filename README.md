@@ -11,34 +11,7 @@ Using this workspace, the [`src/components`](/src/components/) directory has bee
 - CDN: [jsdelivr.com/package/npm/@hudson-newey/web-components](https://www.jsdelivr.com/package/npm/@hudson-newey/web-components)
 - GitHub Releases: [github.com/hudson-newey/webcomponents-workspace/releases](https://github.com/hudson-newey/webcomponents-workspace/releases)
 
-## Workspace Configuration
-
-We recommend using the `webcomponents.code-workspace` in VSCode & running `package.json` scripts through the "NPM Scripts" view.
-
 ## How to use
-
-### Architecture
-
-This GitHub template has two distinct parts: The web-component workspace/development environment
-and the components that you want to publish.
-
-#### web-component workspace
-
-Handles publishing, documentation, and testing
-
-#### component publishing repo
-
-Found under `src/components`, you can develop all your components in isolation here.
-This folder can be published as its own NPM package, and be exported without any dependencies linking it back to the
-web-component-workspace mono-repo.
-
-You can also add sub-modules to this directory to include them in the web-component workspace (this template).
-
-### Development Environment
-
-- Run the "storybook" launch option from the VSCode debugger (_recommend_)
-- Run the "storybook" script from the vscode npm scripts
-- Run `pnpm dev` from a terminal window
 
 ### CDN
 
