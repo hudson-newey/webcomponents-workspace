@@ -61,7 +61,7 @@ export class MediaControls extends LitElement {
 
   private pauseIcon() {
     return html`
-      <slot name="pause-icon" part="pause-icon" part="pause-icon">
+      <slot name="pause-icon" part="pause-icon">
         <embed src="${lucidPauseIcon}"></object>
       </slot>
     `;
