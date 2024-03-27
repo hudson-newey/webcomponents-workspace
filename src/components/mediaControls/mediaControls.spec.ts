@@ -1,6 +1,6 @@
 import { expect, test } from "@sand4rt/experimental-ct-web";
 
-const audioSource = "http://localhost:5173/example.flac";
+const audioSource = "/example.flac";
 const defaultContent = `
   <oe-media-controls for="media">
     <div slot="play-icon">Play Me!</div>
@@ -23,126 +23,142 @@ test("creating a visible web component", async ({ page }) => {
   await expect(mediaControls).toBeVisible();
 });
 
-test("state before interaction", async ({ page }) => {
-  await page.setContent(defaultContent);
+test.describe("audio element communication", () => {
+  test("state before interaction", async ({ page }) => {
+    await page.setContent(defaultContent);
 
-  const audioElement = await page.locator("audio").first();
-  const isPaused = await audioElement.evaluate((element: HTMLAudioElement) => element.paused);
+    const audioElement = await page.locator("audio").first();
+    const isPaused = await audioElement.evaluate((element: HTMLAudioElement) => element.paused);
 
-  await expect(isPaused).toBe(true);
+    await expect(isPaused).toBe(true);
+  });
+
+  test("play functionality", async ({ page }) => {
+    await page.setContent(defaultContent);
+
+    const playButton = await page.locator("oe-media-controls button").first();
+    await playButton.click({ force: true });
+
+    const audioElement = await page.locator("audio");
+    const isPaused = await audioElement.evaluate((element: HTMLAudioElement) => element.paused);
+
+    await expect(isPaused).toBe(false);
+  });
+
+  test("play pause functionality", async ({ page }) => {
+    await page.setContent(defaultContent);
+
+    // start playing audio
+    // by clicking the action button again, we should stop playing audio
+    const playButton = await page.locator("oe-media-controls button").first();
+    await playButton.click({ force: true });
+    await playButton.click({ force: true });
+
+    const audioElement = await page.locator("audio");
+    const isPaused = await audioElement.evaluate((element: HTMLAudioElement) => element.paused);
+
+    await expect(isPaused).toBe(true);
+  });
 });
 
-test("play functionality", async ({ page }) => {
-  await page.setContent(defaultContent);
-
-  const playButton = await page.locator("oe-media-controls button").first();
-  await playButton.click({ force: true });
-
-  const audioElement = await page.locator("audio");
-  const isPaused = await audioElement.evaluate((element: HTMLAudioElement) => element.paused);
-
-  await expect(isPaused).toBe(false);
-});
-
-test("play pause functionality", async ({ page }) => {
-  await page.setContent(defaultContent);
-
-  // start playing audio
-  // by clicking the action button again, we should stop playing audio
-  const playButton = await page.locator("oe-media-controls button").first();
-  await playButton.click({ force: true });
-  await playButton.click({ force: true });
-
-  const audioElement = await page.locator("audio");
-  const isPaused = await audioElement.evaluate((element: HTMLAudioElement) => element.paused);
-
-  await expect(isPaused).toBe(true);
-});
-
-test("custom play icon via slots", async ({ page }) => {
+test.describe("slots", () => {
   const slottedPlayButton = `<div slot="play-icon">Play Me!</div>`;
-  await page.setContent(`
-    <oe-media-controls for="media">
-      ${slottedPlayButton}
-    </oe-media-controls>
-
-    <audio id="media" src="${audioSource}"></audio>
-  `);
-
-  const playButton = await page.locator("oe-media-controls button").first();
-  const playButtonHtml = await playButton.innerHTML();
-
-  await expect(playButtonHtml).toBe(slottedPlayButton);
-});
-
-test("custom pause icon via slots", async ({ page }) => {
   const slottedPauseButton = `<div slot="pause-icon">Pause</div>`;
-  await page.setContent(`
-    <oe-media-controls for="media">
-      ${slottedPauseButton}
-    </oe-media-controls>
 
-    <audio id="media" src="${audioSource}"></audio>
-  `);
+  test("custom play icon via slots", async ({ page }) => {
+    await page.setContent(`
+      <oe-media-controls for="media">
+        ${slottedPlayButton}
+      </oe-media-controls>
+      <audio id="media" src="${audioSource}"></audio>
+    `);
 
-  const pauseButton = await page.locator("oe-media-controls button").first();
-  const pauseButtonHtml = await pauseButton.innerHTML();
+    const playButton = await page.locator("oe-media-controls button > slot").first();
+    const assignedNode = await playButton.evaluate((element: HTMLSlotElement) => element.assignedElements());
 
-  await expect(pauseButtonHtml).toBe(slottedPauseButton);
-});
-
-test("custom styling for the default play/pause icons via css parts", async ({ page }) => {
-  await page.setContent(defaultContent);
-  await page.addStyleTag({
-    content: `
-      oe-media-controls::part(play-icon) {
-        color: rgb(255, 0, 0);
-        background-color: rgb(0, 0, 255);
-      }
-
-      oe-media-controls::part(pause-icon) {
-        color: rgb(0, 255, 0);
-        background-color: rgb(255, 255, 0);
-      }
-    `,
+    await expect(assignedNode).toHaveLength(1);
   });
 
-  // play button
-  const playButton = await page.locator("oe-media-controls button").first();
-  const playButtonStyles = await playButton.evaluate((element: HTMLButtonElement) => {
-    const styles = window.getComputedStyle(element);
-    return {
-      color: styles.color,
-      backgroundColor: styles.backgroundColor,
-    };
-  });
+  test("custom play and pause icon via slots", async ({ page }) => {
+    await page.setContent(`
+      <oe-media-controls for="media">
+        ${slottedPlayButton}
+        ${slottedPauseButton}
+      </oe-media-controls>
+      <audio id="media" src="${audioSource}"></audio>
+    `);
 
-  await expect(playButtonStyles).toEqual({
-    color: "rgb(0, 255, 0)",
-    backgroundColor: "rgb(0, 0, 255)",
-  });
+    const actionButton = await page.locator("oe-media-controls button > slot").first();
+    const assignedNodes: Element[] = await actionButton.evaluate((element: HTMLSlotElement) =>
+      element.assignedElements(),
+    );
 
-  // start playing audio so we can see the default pause icon
-  const playButtonElement = await page.locator("oe-media-controls button").first();
-  await playButtonElement.click({ force: true });
+    // the slot should only have one assigned node at a time
+    // eg. It should use the play icon slot when the audio is paused and the pause icon slot when the audio is playing
+    // but never both at the same time
+    await expect(assignedNodes).toHaveLength(1);
 
-  const pauseButton = await page.locator("oe-media-controls button").first();
-  const pauseButtonStyles = await pauseButton.evaluate((element: HTMLButtonElement) => {
-    const styles = window.getComputedStyle(element);
-    return {
-      color: styles.color,
-      backgroundColor: styles.backgroundColor,
-    };
-  });
+    // start playing audio so we can see the default pause icon
+    await actionButton.click({ force: true });
 
-  await expect(pauseButtonStyles).toEqual({
-    color: "rgb(0, 255, 0)",
-    backgroundColor: "rgb(255, 255, 0)",
+    await expect(assignedNodes).toHaveLength(1);
   });
 });
 
-test("custom styling for a custom play/pause slot via css parts", async ({ page }) => {
-  await page.setContent(`
+test.describe("css parts", () => {
+  const cssPartsStyling = `
+    oe-media-controls::part(play-icon) {
+      color: rgb(255, 0, 0);
+      background-color: rgb(0, 0, 255);
+    }
+
+    oe-media-controls::part(pause-icon) {
+      color: rgb(0, 255, 0);
+      background-color: rgb(255, 255, 0);
+    }
+  `;
+
+  test("custom styling for the default play/pause icons via css parts", async ({ page }) => {
+    await page.setContent(defaultContent);
+    await page.addStyleTag({ content: cssPartsStyling });
+
+    // because locators are lazily evaluated, we don't need to redeclare the locator
+    // every time we want to fetch the state of the button
+    // eg. We don't have to redeclare another locator later for the pause button, we can use the same one
+    const actionButton = await page.locator("oe-media-controls button > slot").first();
+
+    const playButtonStyles = await actionButton.evaluate((element: HTMLButtonElement) => {
+      const styles = window.getComputedStyle(element);
+      return {
+        color: styles.color,
+        backgroundColor: styles.backgroundColor,
+      };
+    });
+
+    await expect(playButtonStyles).toEqual({
+      color: "rgb(255, 0, 0)",
+      backgroundColor: "rgb(0, 0, 255)",
+    });
+
+    // start playing audio so we can see the default pause icon
+    await actionButton.click({ force: true });
+
+    const pauseButtonStyles = await actionButton.evaluate((element: HTMLButtonElement) => {
+      const styles = window.getComputedStyle(element);
+      return {
+        color: styles.color,
+        backgroundColor: styles.backgroundColor,
+      };
+    });
+
+    await expect(pauseButtonStyles).toEqual({
+      color: "rgb(0, 255, 0)",
+      backgroundColor: "rgb(255, 255, 0)",
+    });
+  });
+
+  test("custom styling for a custom play/pause slot via css parts", async ({ page }) => {
+    await page.setContent(`
     <oe-media-controls for="media">
       <div slot="play-icon">Play Me!</div>
       <div slot="pause-icon">Pause</div>
@@ -151,50 +167,37 @@ test("custom styling for a custom play/pause slot via css parts", async ({ page 
     <audio id="media" src="${audioSource}"></audio>
   `);
 
-  await page.addStyleTag({
-    content: `
-      oe-media-controls::part(play-icon) {
-        color: rgb(255, 0, 0);
-        background-color: rgb(0, 0, 255);
-      }
+    await page.addStyleTag({ content: cssPartsStyling });
 
-      oe-media-controls::part(pause-icon) {
-        color: rgb(0, 255, 0);
-        background-color: rgb(255, 255, 0);
-      }
-    `,
-  });
+    const actionButton = await page.locator("oe-media-controls button > slot").first();
 
-  // play button
-  const playButton = await page.locator("oe-media-controls button").first();
-  const playButtonStyles = await playButton.evaluate((element: HTMLButtonElement) => {
-    const styles = window.getComputedStyle(element);
-    return {
-      color: styles.color,
-      backgroundColor: styles.backgroundColor,
-    };
-  });
+    const playButtonStyles = await actionButton.evaluate((element: HTMLButtonElement) => {
+      const styles = window.getComputedStyle(element);
+      return {
+        color: styles.color,
+        backgroundColor: styles.backgroundColor,
+      };
+    });
 
-  await expect(playButtonStyles).toEqual({
-    color: "rgb(255, 0, 0)",
-    backgroundColor: "rgb(0, 0, 255)",
-  });
+    await expect(playButtonStyles).toEqual({
+      color: "rgb(255, 0, 0)",
+      backgroundColor: "rgb(0, 0, 255)",
+    });
 
-  // start playing audio so we can see the default pause icon
-  const playButtonElement = await page.locator("oe-media-controls button").first();
-  await playButtonElement.click({ force: true });
+    // start playing audio so we can see the default pause icon
+    await actionButton.click({ force: true });
 
-  const pauseButton = await page.locator("oe-media-controls button").first();
-  const pauseButtonStyles = await pauseButton.evaluate((element: HTMLButtonElement) => {
-    const styles = window.getComputedStyle(element);
-    return {
-      color: styles.color,
-      backgroundColor: styles.backgroundColor,
-    };
-  });
+    const pauseButtonStyles = await actionButton.evaluate((element: HTMLButtonElement) => {
+      const styles = window.getComputedStyle(element);
+      return {
+        color: styles.color,
+        backgroundColor: styles.backgroundColor,
+      };
+    });
 
-  await expect(pauseButtonStyles).toEqual({
-    color: "rgb(0, 255, 0)",
-    backgroundColor: "rgb(255, 255, 0)",
+    await expect(pauseButtonStyles).toEqual({
+      color: "rgb(0, 255, 0)",
+      backgroundColor: "rgb(255, 255, 0)",
+    });
   });
 });
