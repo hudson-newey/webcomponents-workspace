@@ -5,6 +5,9 @@ js/
 test-results/
 **/*custom-elements.json
 
+# vite
+vite.config.ts.timestamp-*.mjs
+
 # Logs
 logs
 *.log

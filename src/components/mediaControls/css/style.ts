@@ -13,5 +13,10 @@ export const mediaControlsStyles = css`
     font-size: 1rem;
     min-width: 2.8rem;
     min-height: 2.3rem;
+
+    svg {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
   }
 `;

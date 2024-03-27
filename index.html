@@ -10,7 +10,6 @@
   <body>
     <oe-media-controls for="media">
       <div slot="play-icon">Play Me!</div>
-      <div slot="pause-icon">Pause</div>
     </oe-media-controls>
 
     <audio id="media" src="http://localhost:5173/example.flac"></audio>
@@ -19,10 +18,12 @@
       oe-media-controls {
         &::part(play-icon) {
           color: green;
+          fill: green;
         }
 
         &::part(pause-icon) {
           color: red;
+          fill: red;
         }
       }
     </style>

@@ -52,15 +52,7 @@ export class MediaControls extends LitElement {
   private playIcon() {
     return html`
       <slot name="play-icon" part="play-icon">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
+        <svg>
           <polygon points="5 3 19 12 5 21 5 3"></polygon>
         </svg>
       </slot>
@@ -70,15 +62,7 @@ export class MediaControls extends LitElement {
   private pauseIcon() {
     return html`
       <slot name="pause-icon" part="pause-icon">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
+        <svg>
           <rect x="6" y="4" width="4" height="16"></rect>
           <rect x="14" y="4" width="4" height="16"></rect>
         </svg>
