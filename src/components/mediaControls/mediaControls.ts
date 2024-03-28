@@ -1,5 +1,5 @@
 import { LitElement, html } from "lit";
-import { customElement, property, state } from "lit/decorators.js";
+import { customElement, property, state, eventOptions } from "lit/decorators.js";
 import { mediaControlsStyles } from "./css/style";
 import { ILogger, rootContext } from "../logger/logger";
 import { provide } from "@lit/context";
@@ -9,6 +9,16 @@ import { unsafeSVG } from "lit/directives/unsafe-svg.js";
 
 export interface MediaControlsProps {
   for: string;
+}
+
+class A {
+  public constructor(s: string, x: number) {
+    this.s = s;
+    this.x = x;
+  }
+
+  s: string;
+  x: number;
 }
 
 /**
@@ -38,7 +48,7 @@ export class MediaControls extends LitElement {
   @state()
   public playing = false;
 
-  private toggleAudio(): void {
+  public toggleAudio(): void {
     const audioElement = document.getElementById(this.for) as HTMLAudioElement;
 
     if (this.playing) {
@@ -50,6 +60,17 @@ export class MediaControls extends LitElement {
     this.playing = !this.playing;
 
     this.logger.log(`Audio ${this.playing ? "playing" : "paused"}`);
+
+    this.onChange();
+  }
+
+  @eventOptions({ passive: true })
+  public onChange() {
+    this.dispatchEvent(
+      new CustomEvent("test-a", {
+        detail: { self: this, a: new A("that", 49), value: `${this.playing ? "playing" : "paused"}` },
+      }),
+    );
   }
 
   private playIcon() {

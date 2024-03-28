@@ -5,6 +5,6 @@ export default defineConfig({
   // we start the vite server so that we can access the public/ directory
   // that contains audio files used in testing
   webServer: {
-    command: "pnpm dlx vite",
+    command: "pnpm dlx vite --port 3000",
   },
 });
