@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.11.1](https://github.com/hudson-newey/webcomponents-workspace/compare/web-components-v1.11.0...web-components-v1.11.1) (2024-03-28)
+
+
+### Bug Fixes
+
+* E2e Tests ([c22eb14](https://github.com/hudson-newey/webcomponents-workspace/commit/c22eb14ffc1a472cd34f9d2bd815a39bb69fce77))
+
 ## [1.11.0](https://github.com/hudson-newey/webcomponents-workspace/compare/web-components-v1.10.6...web-components-v1.11.0) (2024-03-27)
 
 

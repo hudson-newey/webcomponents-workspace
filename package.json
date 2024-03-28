@@ -1,7 +1,7 @@
 {
   "name": "@hudson-newey/web-components",
   "description": "My web components",
-  "version": "1.11.0",
+  "version": "1.11.1",
   "types": "@types/",
   "main": "js/index.js",
   "type": "module",
